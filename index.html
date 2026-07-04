@@ -17,16 +17,42 @@
     body { margin: 0; background: #0B0E0D; }
     ::selection { background: rgba(124,242,156,0.25); }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Responsivo — !important necessário para sobrepor estilos inline */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr 260px !important; gap: 40px !important; }
+      .hero-title { font-size: 52px !important; }
+    }
+    @media (max-width: 860px) {
+      .nav { padding: 0 20px !important; }
+      .nav-links { display: none !important; }
+      .container { padding: 56px 20px !important; }
+      .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 56px 20px 48px !important; }
+      .hero-photo { width: 100%; max-width: 360px; }
+      .section-split { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .project-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .feats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .stack-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 560px) {
+      .hero-title { font-size: 40px !important; }
+      .project-title { font-size: 32px !important; }
+      .contact-title { font-size: 34px !important; }
+      .contact-email { font-size: 16px !important; word-break: break-all; }
+      .feats-grid, .stack-grid, .edu-grid { grid-template-columns: 1fr !important; }
+      .project-grid .sc-host-x, .project-grid .shot-slot { height: 220px !important; }
+      .footer-row { flex-direction: column !important; align-items: flex-start !important; }
+    }
   </style>
 </helmet>
 
 <div style="min-height: 100vh; background: #0B0E0D; color: #E8EDEA; font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased;">
 
   <!-- NAV -->
-  <nav data-screen-label="Nav" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 64px; background: rgba(11,14,13,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid #1F2624;">
+  <nav data-screen-label="Nav" class="nav" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 64px; background: rgba(11,14,13,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid #1F2624;">
     <a href="#top" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; color: {{ accent }}; text-decoration: none; letter-spacing: 0.04em;">victor.arthur<span style="color: #5A655F;">()</span></a>
     <div style="display: flex; align-items: center; gap: 28px;">
-      <div style="display: flex; gap: 24px; font-size: 14px;">
+      <div class="nav-links" style="display: flex; gap: 24px; font-size: 14px;">
         <a href="#sobre" style="color: #8B9691; text-decoration: none;" style-hover="color: #E8EDEA;">{{ t.nav.about }}</a>
         <a href="#projetos" style="color: #8B9691; text-decoration: none;" style-hover="color: #E8EDEA;">{{ t.nav.project }}</a>
         <a href="#stack" style="color: #8B9691; text-decoration: none;" style-hover="color: #E8EDEA;">{{ t.nav.stack }}</a>
@@ -42,10 +68,10 @@
 
   <!-- HERO -->
   <header id="top" data-screen-label="Hero" style="background-image: {{ gridBg }}; background-size: 48px 48px; border-bottom: 1px solid #1F2624;">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 96px 32px 88px; display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: center; animation: fadeUp 0.6s ease both;">
+    <div class="hero-grid" style="max-width: 1080px; margin: 0 auto; padding: 96px 32px 88px; display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: center; animation: fadeUp 0.6s ease both;">
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">{{ t.hero.kicker }}</div>
-        <h1 style="margin: 0; font-size: 64px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em;">Victor Arthur</h1>
+        <h1 class="hero-title" style="margin: 0; font-size: 64px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em;">Victor Arthur</h1>
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <div style="font-size: 22px; font-weight: 500; color: #E8EDEA;">{{ t.hero.role }}</div>
           <div style="font-size: 16px; color: #8B9691;">{{ t.hero.sub }}</div>
@@ -61,7 +87,7 @@
           <a href="mailto:arthurvictor552@gmail.com" style="color: #8B9691; text-decoration: none;" style-hover="color: {{ accent }};">email ↗</a>
         </div>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div class="hero-photo" style="display: flex; flex-direction: column; gap: 12px;">
         <div style="position: relative; border: 1px solid #2A3230; border-radius: 12px; padding: 10px; background: #10141326;">
           <img src="uploads/foto-1783131299341.jpg" alt="Victor Arthur" style="display: block; width: 100%; height: 340px; object-fit: cover; object-position: 50% 30%; border-radius: 8px; filter: saturate(0.85);">
           <div style="position: absolute; top: -1px; left: -1px; width: 18px; height: 18px; border-top: 2px solid {{ accent }}; border-left: 2px solid {{ accent }}; border-radius: 4px 0 0 0;"></div>
@@ -74,7 +100,7 @@
 
   <!-- SOBRE -->
   <section id="sobre" data-screen-label="Sobre" style="border-bottom: 1px solid #1F2624;">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: grid; grid-template-columns: 260px 1fr; gap: 48px;">
+    <div class="container section-split" style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: grid; grid-template-columns: 260px 1fr; gap: 48px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 01 — {{ t.about.label }}</div>
       <div style="display: flex; flex-direction: column; gap: 18px; max-width: 640px;">
         <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #C7CFCA; text-wrap: pretty;">{{ t.about.p1 }}</p>
@@ -85,12 +111,12 @@
 
   <!-- PROJETO -->
   <section id="projetos" data-screen-label="Projetos" style="border-bottom: 1px solid #1F2624; background: #0D110F;">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: flex; flex-direction: column; gap: 40px;">
+    <div class="container" style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: flex; flex-direction: column; gap: 40px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 02 — {{ t.project.label }}</div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+      <div class="project-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
         <div style="display: flex; flex-direction: column; gap: 18px;">
-          <h2 style="margin: 0; font-size: 44px; font-weight: 700; letter-spacing: -0.02em;">Razorfy</h2>
+          <h2 class="project-title" style="margin: 0; font-size: 44px; font-weight: 700; letter-spacing: -0.02em;">Razorfy</h2>
           <div style="font-size: 18px; font-weight: 500; color: {{ accent }};">{{ t.project.tagline }}</div>
           <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #A9B3AE; text-wrap: pretty;">{{ t.project.desc }}</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
@@ -103,12 +129,12 @@
           </div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="razorfy-shot" shape="rounded" radius="10" placeholder="screenshot do Razorfy" style="width: 100%; height: 320px; border: 1px solid #2A3230; border-radius: 10px;" hint-size="100%,320px"></x-import>
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="razorfy-shot" class="shot-slot" shape="rounded" radius="10" placeholder="screenshot do Razorfy" style="width: 100%; height: 320px; border: 1px solid #2A3230; border-radius: 10px;" hint-size="100%,320px"></x-import>
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A655F;">{{ t.project.shotCaption }}</div>
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+      <div class="feats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
         <sc-for list="{{ feats }}" as="f" hint-placeholder-count="6">
           <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 22px; background: #0B0E0D; display: flex; flex-direction: column; gap: 8px;" style-hover="border-color: #3A4643;">
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{ accent }};">{{ f.num }}</div>
@@ -130,9 +156,9 @@
 
   <!-- STACK -->
   <section id="stack" data-screen-label="Stack" style="border-bottom: 1px solid #1F2624;">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: flex; flex-direction: column; gap: 36px;">
+    <div class="container" style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: flex; flex-direction: column; gap: 36px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 03 — {{ t.stack.label }}</div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+      <div class="stack-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
         <sc-for list="{{ skills }}" as="g" hint-placeholder-count="4">
           <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 14px;">
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{ accent }}; letter-spacing: 0.06em; text-transform: uppercase;">{{ g.label }}</div>
@@ -149,7 +175,7 @@
 
   <!-- EXPERIÊNCIA -->
   <section id="experiencia" data-screen-label="Experiência" style="border-bottom: 1px solid #1F2624; background: #0D110F;">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: grid; grid-template-columns: 260px 1fr; gap: 48px;">
+    <div class="container section-split" style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: grid; grid-template-columns: 260px 1fr; gap: 48px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 04 — {{ t.exp.label }}</div>
       <div style="display: flex; flex-direction: column;">
         <sc-for list="{{ jobs }}" as="job" hint-placeholder-count="2">
@@ -176,9 +202,9 @@
 
   <!-- FORMAÇÃO -->
   <section id="formacao" data-screen-label="Formação" style="border-bottom: 1px solid #1F2624;">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: grid; grid-template-columns: 260px 1fr; gap: 48px;">
+    <div class="container section-split" style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: grid; grid-template-columns: 260px 1fr; gap: 48px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 05 — {{ t.edu.label }}</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div class="edu-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
         <div style="grid-column: 1 / -1; border: 1px solid #1F2624; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A655F;">{{ t.edu.period }}</div>
           <div style="font-size: 19px; font-weight: 600;">{{ t.edu.degree }}</div>
@@ -198,11 +224,11 @@
 
   <!-- CONTATO -->
   <section id="contato" data-screen-label="Contato">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 96px 32px 80px; display: flex; flex-direction: column; gap: 28px;">
+    <div class="container" style="max-width: 1080px; margin: 0 auto; padding: 96px 32px 80px; display: flex; flex-direction: column; gap: 28px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 06 — {{ t.contact.label }}</div>
-      <h2 style="margin: 0; font-size: 48px; font-weight: 700; letter-spacing: -0.02em; text-wrap: pretty;">{{ t.contact.title }}</h2>
+      <h2 class="contact-title" style="margin: 0; font-size: 48px; font-weight: 700; letter-spacing: -0.02em; text-wrap: pretty;">{{ t.contact.title }}</h2>
       <p style="margin: 0; max-width: 520px; font-size: 16px; line-height: 1.7; color: #8B9691; text-wrap: pretty;">{{ t.contact.desc }}</p>
-      <a href="mailto:arthurvictor552@gmail.com" style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: {{ accent }}; text-decoration: none; width: fit-content;" style-hover="text-decoration: underline;">arthurvictor552@gmail.com</a>
+      <a href="mailto:arthurvictor552@gmail.com" class="contact-email" style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: {{ accent }}; text-decoration: none; width: fit-content;" style-hover="text-decoration: underline;">arthurvictor552@gmail.com</a>
       <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
         <a href="https://wa.me/5562994267179" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C7CFCA; border: 1px solid #2A3230; border-radius: 8px; padding: 10px 18px; text-decoration: none;" style-hover="border-color: {{ accent }}; color: {{ accent }};">whatsapp ↗</a>
         <a href="https://github.com/Vitocodando" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C7CFCA; border: 1px solid #2A3230; border-radius: 8px; padding: 10px 18px; text-decoration: none;" style-hover="border-color: {{ accent }}; color: {{ accent }};">github ↗</a>
@@ -213,7 +239,7 @@
   </section>
 
   <footer style="border-top: 1px solid #1F2624;">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A655F;">
+    <div class="footer-row" style="max-width: 1080px; margin: 0 auto; padding: 28px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A655F;">
       <div>© 2026 Victor Arthur</div>
       <div>{{ t.footer }}</div>
     </div>
