@@ -16,18 +16,21 @@ export const ArchitectureCard: React.FC<ArchitectureCardProps> = ({ feature }) =
         display: 'flex',
         flexDirection: 'column',
         gap: '8px',
-        transition: 'border-color var(--transition-fast), transform var(--transition-fast)',
+        transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        cursor: 'default',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = 'var(--border-hover)';
-        e.currentTarget.style.transform = 'translateY(-2px)';
+        e.currentTarget.style.transform = 'translateY(-3px)';
+        e.currentTarget.style.boxShadow = '0 10px 26px rgba(0, 0, 0, 0.4)';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.borderColor = 'var(--border-subtle)';
         e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.boxShadow = 'none';
       }}
     >
-      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent-green)' }}>
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent-green)', fontWeight: 600 }}>
         {feature.num}
       </div>
       <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-primary)' }}>

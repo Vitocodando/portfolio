@@ -17,7 +17,12 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const waUrl = `https://wa.me/5562994267179?text=${encodeURIComponent(waMsg)}`;
 
   return (
-    <div className="service-card">
+    <div
+      className="service-card"
+      style={{
+        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+      }}
+    >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
         <div
           style={{
@@ -30,6 +35,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '20px',
+            transition: 'transform var(--transition-fast)',
           }}
         >
           {service.icon}
@@ -52,7 +58,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
                 gap: '8px',
               }}
             >
-              <span style={{ color: service.accentColor }}>✓</span> {p}
+              <span style={{ color: service.accentColor, fontWeight: 'bold' }}>✓</span> {p}
             </div>
           ))}
         </div>
@@ -71,6 +77,15 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           display: 'inline-flex',
           alignItems: 'center',
           gap: '4px',
+          transition: 'transform var(--transition-fast), opacity var(--transition-fast)',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateX(4px)';
+          e.currentTarget.style.opacity = '0.9';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateX(0)';
+          e.currentTarget.style.opacity = '1';
         }}
       >
         {ctaText}

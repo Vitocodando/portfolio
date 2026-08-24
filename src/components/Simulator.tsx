@@ -25,7 +25,7 @@ export const Simulator: React.FC = () => {
   const waLink = `https://wa.me/5562994267179?text=${encodeURIComponent(waMsg)}`;
 
   const getOptionStyle = (active: boolean) => ({
-    padding: '12px 14px',
+    padding: '13px 15px',
     borderRadius: '8px',
     border: `1px solid ${active ? 'var(--accent-green)' : 'var(--border-subtle)'}`,
     background: active ? 'var(--bg-card-elevated)' : 'var(--bg-card)',
@@ -34,8 +34,9 @@ export const Simulator: React.FC = () => {
     cursor: 'pointer',
     textAlign: 'left' as const,
     fontSize: '14px',
-    transition: 'all var(--transition-fast)',
-    boxShadow: active ? '0 0 14px rgba(124, 242, 156, 0.12)' : 'none',
+    transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+    transform: active ? 'scale(1.02)' : 'scale(1)',
+    boxShadow: active ? '0 0 16px rgba(124, 242, 156, 0.16)' : 'none',
   });
 
   return (
@@ -137,6 +138,7 @@ export const Simulator: React.FC = () => {
               display: 'flex',
               flexDirection: 'column',
               gap: '16px',
+              transition: 'border-color var(--transition-normal)',
             }}
           >
             <div
@@ -158,7 +160,7 @@ export const Simulator: React.FC = () => {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <div style={{ fontSize: '13px', color: 'var(--text-dim)' }}>{t.calc.selectedLabel}</div>
-              <div style={{ fontSize: '17px', fontWeight: 700, color: 'var(--text-primary)' }}>
+              <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-primary)', transition: 'color 0.2s ease' }}>
                 {scope.title}
               </div>
               <div style={{ fontSize: '13px', color: 'var(--accent-green)', fontFamily: 'var(--font-body)', lineHeight: 1.5 }}>

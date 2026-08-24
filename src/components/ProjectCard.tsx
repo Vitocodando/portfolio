@@ -32,10 +32,34 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   repoUrl,
 }) => {
   return (
-    <div className="project-card">
+    <div
+      className="project-card"
+      style={{
+        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+      }}
+    >
       {mockupImg && (
-        <div style={{ borderBottom: '1px solid var(--border-subtle)', overflow: 'hidden', background: bgColor }}>
-          <img src={mockupImg} alt={mockupAlt || title} className="mockup-img" />
+        <div
+          style={{
+            borderBottom: '1px solid var(--border-subtle)',
+            overflow: 'hidden',
+            background: bgColor,
+          }}
+        >
+          <img
+            src={mockupImg}
+            alt={mockupAlt || title}
+            className="mockup-img"
+            style={{
+              transition: 'transform 0.4s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.025)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+          />
         </div>
       )}
 
@@ -57,6 +81,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 fontSize: '11px',
                 color: tagColor,
                 textTransform: 'uppercase',
+                fontWeight: 600,
+                letterSpacing: '0.04em',
               }}
             >
               {type}
@@ -84,6 +110,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   border: '1px solid #232D28',
                   borderRadius: '6px',
                   padding: '4px 8px',
+                  transition: 'border-color var(--transition-fast)',
                 }}
               >
                 {item}
@@ -106,7 +133,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   borderRadius: '6px',
                   padding: '8px 14px',
                   textDecoration: 'none',
-                  transition: 'opacity var(--transition-fast)',
+                  transition: 'transform var(--transition-fast), opacity var(--transition-fast)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                  e.currentTarget.style.opacity = '0.92';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.opacity = '1';
                 }}
               >
                 {liveLabel}
@@ -125,7 +160,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   borderRadius: '6px',
                   padding: '8px 14px',
                   textDecoration: 'none',
-                  transition: 'border-color var(--transition-fast), color var(--transition-fast)',
+                  transition: 'border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--accent-green)';
+                  e.currentTarget.style.color = 'var(--accent-green)';
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--border-muted)';
+                  e.currentTarget.style.color = 'var(--text-secondary)';
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 GitHub Repo ↗
