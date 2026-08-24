@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08070F" />
+      <stop offset="50%" stop-color="#100F21" />
+      <stop offset="100%" stop-color="#06050C" />
+    </linearGradient>
+    <linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+    <linearGradient id="aiCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18162E" />
+      <stop offset="100%" stop-color="#100E20" />
+    </linearGradient>
+    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#aiBg)" />
+  
+  <!-- Glowing Ambient Orbs -->
+  <circle cx="250" cy="200" r="260" fill="#818CF8" opacity="0.08" filter="url(#purpleGlow)" />
+  <circle cx="950" cy="450" r="280" fill="#C084FC" opacity="0.08" filter="url(#purpleGlow)" />
+
+  <!-- Terminal Window Frame -->
+  <g transform="translate(100, 45)">
+    <rect width="1000" height="570" rx="16" fill="#0C0A17" stroke="#2B264E" stroke-width="1.5" />
+    
+    <!-- Top Bar -->
+    <rect width="1000" height="46" rx="16" fill="#141126" />
+    <rect y="30" width="1000" height="16" fill="#141126" />
+    <line x1="0" y1="46" x2="1000" y2="46" stroke="#2B264E" stroke-width="1" />
+    
+    <!-- Window Controls -->
+    <circle cx="28" cy="23" r="5" fill="#EF4444" opacity="0.8" />
+    <circle cx="44" cy="23" r="5" fill="#F59E0B" opacity="0.8" />
+    <circle cx="60" cy="23" r="5" fill="#10B981" opacity="0.8" />
+
+    <!-- Title and Model Badge -->
+    <text x="96" y="28" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700">⚡ NLW Agents · Game Meta Analyst</text>
+    <rect x="740" y="10" width="230" height="26" rx="6" fill="#1C1738" stroke="#3D326B" stroke-width="1" />
+    <circle cx="756" cy="23" r="4" fill="#7CF29C" />
+    <text x="768" y="27" fill="#C084FC" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">Model: Gemini 2.5 Flash</text>
+
+    <!-- Query Box & Controls -->
+    <g transform="translate(48, 70)">
+      <rect width="904" height="64" rx="10" fill="url(#aiCard)" stroke="#322C5C" stroke-width="1" />
+      <text x="20" y="24" fill="#8B96A0" font-family="'JetBrains Mono', monospace" font-size="11">Selecione o Jogo e faça sua pergunta:</text>
+      
+      <!-- Game Selector chip -->
+      <rect x="20" y="32" width="160" height="24" rx="6" fill="#241E45" stroke="#433878" stroke-width="1" />
+      <text x="32" y="48" fill="#C084FC" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600">🎮 League of Legends</text>
+      
+      <!-- Search Prompt Input -->
+      <rect x="190" y="32" width="580" height="24" rx="6" fill="#0C0A17" stroke="#251F42" stroke-width="1" />
+      <text x="204" y="48" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">Qual a melhor build e runas para o Patch 14.x atual?</text>
+      
+      <!-- Ask button -->
+      <rect x="780" y="32" width="104" height="24" rx="6" fill="url(#aiCyan)" />
+      <text x="800" y="48" fill="#08070F" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700">Perguntar ⚡</text>
+    </g>
+
+    <!-- AI Output & Realtime Response -->
+    <g transform="translate(48, 154)">
+      <rect width="904" height="380" rx="12" fill="#0E0B1A" stroke="#2C2454" stroke-width="1" />
+      
+      <!-- Response Header -->
+      <g transform="translate(24, 28)">
+        <circle cx="12" cy="12" r="12" fill="#2B2159" />
+        <text x="7" y="17" fill="#C084FC" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">✦</text>
+        <text x="36" y="16" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">Análise de Meta &amp; Build Otimizada</text>
+        <rect x="360" y="3" width="160" height="20" rx="4" fill="#132A1E" />
+        <text x="370" y="17" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">✓ Patch 14.x Sincronizado</text>
+      </g>
+
+      <!-- Response Content Markdown Cards -->
+      <g transform="translate(24, 68)">
+        <!-- Item 1: Strategy Summary -->
+        <rect width="856" height="54" rx="8" fill="#151228" stroke="#262047" stroke-width="1" />
+        <text x="16" y="24" fill="#C084FC" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">## Diagnóstico Estratégico</text>
+        <text x="16" y="42" fill="#C7CFCA" font-family="'Space Grotesk', sans-serif" font-size="12">No patch atual, campeões de escalonamento e mobilidade dominam a rota superior com 54.2% de winrate.</text>
+
+        <!-- Item 2: Core Items Grid -->
+        <g transform="translate(0, 70)">
+          <rect width="418" height="190" rx="8" fill="#151228" stroke="#262047" stroke-width="1" />
+          <text x="16" y="26" fill="#818CF8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">### Ordem de Itens Essenciais</text>
+          
+          <rect x="16" y="40" width="386" height="38" rx="6" fill="#0C0A17" />
+          <text x="28" y="63" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">1. Eclipse · Pico de dano e escudo em trocas</text>
+
+          <rect x="16" y="86" width="386" height="38" rx="6" fill="#0C0A17" />
+          <text x="28" y="109" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">2. Dança da Morte · Sobrevivência contra burst</text>
+
+          <rect x="16" y="132" width="386" height="38" rx="6" fill="#0C0A17" />
+          <text x="28" y="155" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">3. Cutelo Negro · Redução de armadura em área</text>
+        </g>
+
+        <!-- Item 3: Runas & Dicas -->
+        <g transform="translate(438, 70)">
+          <rect width="418" height="190" rx="8" fill="#151228" stroke="#262047" stroke-width="1" />
+          <text x="16" y="26" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">### Configuração de Runas &amp; Dicas</text>
+
+          <rect x="16" y="40" width="386" height="38" rx="6" fill="#0C0A17" />
+          <text x="28" y="63" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="12">Primária: Conquistador + Triunfo + Tenacidade</text>
+
+          <rect x="16" y="86" width="386" height="38" rx="6" fill="#0C0A17" />
+          <text x="28" y="109" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="12">Secundária: Osso Revestido + Inabalável</text>
+
+          <rect x="16" y="132" width="386" height="38" rx="6" fill="#182A22" stroke="#223B2D" stroke-width="1" />
+          <text x="28" y="155" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">💡 Dica de IA: Priorize lutas no 2º dragão para snowball.</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

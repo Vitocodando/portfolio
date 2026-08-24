@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B0A" />
+      <stop offset="50%" stop-color="#0D1210" />
+      <stop offset="100%" stop-color="#060908" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141B18" />
+      <stop offset="100%" stop-color="#0F1513" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7CF29C" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7CF29C" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#7CF29C" stop-opacity="0.0" />
+    </linearGradient>
+    <filter id="emeraldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <pattern id="gridPattern" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+  <rect width="1200" height="675" fill="url(#gridPattern)" />
+
+  <!-- Ambient Glow -->
+  <circle cx="280" cy="220" r="260" fill="#7CF29C" opacity="0.07" filter="url(#emeraldGlow)" />
+  <circle cx="950" cy="400" r="220" fill="#38BDF8" opacity="0.05" filter="url(#emeraldGlow)" />
+
+  <!-- MAIN DESKTOP BROWSER FRAME -->
+  <g transform="translate(60, 45)">
+    <!-- Window Shadow & Background -->
+    <rect width="780" height="540" rx="16" fill="#0D1210" stroke="#1F2A25" stroke-width="1.5" />
+    
+    <!-- Browser Top Bar -->
+    <rect width="780" height="48" rx="16" fill="#121815" />
+    <rect y="32" width="780" height="16" fill="#121815" />
+    <line x1="0" y1="48" x2="780" y2="48" stroke="#1F2A25" stroke-width="1" />
+    
+    <!-- Window Controls -->
+    <circle cx="28" cy="24" r="5.5" fill="#EF4444" opacity="0.8" />
+    <circle cx="46" cy="24" r="5.5" fill="#F59E0B" opacity="0.8" />
+    <circle cx="64" cy="24" r="5.5" fill="#10B981" opacity="0.8" />
+    
+    <!-- URL Bar -->
+    <rect x="100" y="10" width="420" height="28" rx="6" fill="#0A0E0C" stroke="#1C2521" stroke-width="1" />
+    <text x="116" y="28" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">https://</text>
+    <text x="168" y="28" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">razorfy.online/dashboard/analytics</text>
+    <rect x="490" y="16" width="18" height="16" rx="3" fill="#1C2521" />
+    
+    <!-- Header / Navbar inside SaaS -->
+    <g transform="translate(24, 66)">
+      <text x="0" y="20" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="700" letter-spacing="-0.02em">💈 Razorfy</text>
+      <rect x="90" y="6" width="130" height="22" rx="11" fill="#1A2420" stroke="#25352E" stroke-width="1" />
+      <text x="102" y="21" fill="#7CF29C" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600">● Barbearia Vintage</text>
+      
+      <!-- Live Badge -->
+      <rect x="580" y="6" width="150" height="22" rx="6" fill="#16221C" stroke="#223B2D" stroke-width="1" />
+      <circle cx="594" cy="17" r="3.5" fill="#7CF29C" />
+      <text x="604" y="21" fill="#A7F3D0" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">MULTI-TENANT LIVE</text>
+    </g>
+
+    <!-- METRICS CARDS -->
+    <g transform="translate(24, 112)">
+      <!-- Metric 1 -->
+      <rect x="0" y="0" width="230" height="96" rx="10" fill="url(#cardGrad)" stroke="#1F2A25" stroke-width="1" />
+      <text x="16" y="26" fill="#8B9B94" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500">FATURAMENTO MENSAL</text>
+      <text x="16" y="58" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700">R$ 18.420,00</text>
+      <rect x="16" y="68" width="80" height="18" rx="4" fill="#132A1E" />
+      <text x="22" y="81" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">▲ +24.8% vs mês</text>
+
+      <!-- Metric 2 -->
+      <rect x="250" y="0" width="230" height="96" rx="10" fill="url(#cardGrad)" stroke="#1F2A25" stroke-width="1" />
+      <text x="266" y="26" fill="#8B9B94" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500">AGENDAMENTOS TOTAIS</text>
+      <text x="266" y="58" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700">418 cortes</text>
+      <rect x="266" y="68" width="94" height="18" rx="4" fill="#132A1E" />
+      <text x="272" y="81" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">● 97.4% ocupação</text>
+
+      <!-- Metric 3 -->
+      <rect x="500" y="0" width="232" height="96" rx="10" fill="url(#cardGrad)" stroke="#1F2A25" stroke-width="1" />
+      <text x="516" y="26" fill="#8B9B94" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="500">CASHBACK &amp; RETENÇÃO</text>
+      <text x="516" y="58" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700">R$ 2.190,00</text>
+      <rect x="516" y="68" width="98" height="18" rx="4" fill="#1E2A38" />
+      <text x="522" y="81" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">★ 89% fidelizados</text>
+    </g>
+
+    <!-- CHART & SCHEDULE SECTION -->
+    <g transform="translate(24, 224)">
+      <!-- Left: Revenue Chart -->
+      <rect x="0" y="0" width="410" height="280" rx="10" fill="url(#cardGrad)" stroke="#1F2A25" stroke-width="1" />
+      <text x="16" y="26" fill="#E2E8F0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600">Fluxo de Caixa &amp; Desempenho Semanal</text>
+      <text x="16" y="44" fill="#8B9B94" font-family="'JetBrains Mono', monospace" font-size="10">Event-driven realtime updates</text>
+      
+      <!-- Chart Area -->
+      <path d="M 30 230 C 90 200, 130 220, 180 160 C 230 110, 270 140, 320 90 C 350 70, 380 80, 390 60 L 390 240 L 30 240 Z" fill="url(#chartGrad)" />
+      <path d="M 30 230 C 90 200, 130 220, 180 160 C 230 110, 270 140, 320 90 C 350 70, 380 80, 390 60" fill="none" stroke="#7CF29C" stroke-width="3" stroke-linecap="round" />
+      
+      <!-- Chart Points -->
+      <circle cx="180" cy="160" r="4" fill="#0D1210" stroke="#7CF29C" stroke-width="2.5" />
+      <circle cx="320" cy="90" r="4" fill="#0D1210" stroke="#7CF29C" stroke-width="2.5" />
+      <circle cx="390" cy="60" r="5" fill="#7CF29C" />
+
+      <!-- Days labels -->
+      <text x="30" y="258" fill="#526059" font-family="'JetBrains Mono', monospace" font-size="9">SEG</text>
+      <text x="90" y="258" fill="#526059" font-family="'JetBrains Mono', monospace" font-size="9">TER</text>
+      <text x="150" y="258" fill="#526059" font-family="'JetBrains Mono', monospace" font-size="9">QUA</text>
+      <text x="210" y="258" fill="#526059" font-family="'JetBrains Mono', monospace" font-size="9">QUI</text>
+      <text x="270" y="258" fill="#526059" font-family="'JetBrains Mono', monospace" font-size="9">SEX</text>
+      <text x="330" y="258" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">SAB</text>
+      <text x="380" y="258" fill="#526059" font-family="'JetBrains Mono', monospace" font-size="9">DOM</text>
+
+      <!-- Right: Live Appointments Stream -->
+      <rect x="424" y="0" width="308" height="280" rx="10" fill="url(#cardGrad)" stroke="#1F2A25" stroke-width="1" />
+      <text x="440" y="26" fill="#E2E8F0" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600">Grade de Hoje · 14:00 - 18:00</text>
+      
+      <!-- Appointment Item 1 -->
+      <rect x="438" y="44" width="280" height="66" rx="8" fill="#121815" stroke="#22302A" stroke-width="1" />
+      <rect x="446" y="52" width="6" height="50" rx="3" fill="#7CF29C" />
+      <text x="460" y="68" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">Carlos Eduardo</text>
+      <text x="460" y="84" fill="#8B9B94" font-family="'Space Grotesk', sans-serif" font-size="10">Corte Degradê Navalhado + Barba</text>
+      <text x="460" y="98" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">14:30 · Confirmado via WhatsApp</text>
+      <text x="668" y="68" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">R$ 65</text>
+
+      <!-- Appointment Item 2 -->
+      <rect x="438" y="118" width="280" height="66" rx="8" fill="#121815" stroke="#22302A" stroke-width="1" />
+      <rect x="446" y="126" width="6" height="50" rx="3" fill="#38BDF8" />
+      <text x="460" y="142" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">Gabriel Alcantara</text>
+      <text x="460" y="158" fill="#8B9B94" font-family="'Space Grotesk', sans-serif" font-size="10">Corte Clássico Tesoura</text>
+      <text x="460" y="172" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">15:15 · Cashback Utilizado (-R$15)</text>
+      <text x="668" y="142" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">R$ 35</text>
+
+      <!-- Appointment Item 3 -->
+      <rect x="438" y="192" width="280" height="66" rx="8" fill="#121815" stroke="#22302A" stroke-width="1" />
+      <rect x="446" y="200" width="6" height="50" rx="3" fill="#F59E0B" />
+      <text x="460" y="216" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">Lucas Martins</text>
+      <text x="460" y="232" fill="#8B9B94" font-family="'Space Grotesk', sans-serif" font-size="10">Barboterapia + Hidratação</text>
+      <text x="460" y="246" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">16:00 · Reserva Temporária (PIX)</text>
+      <text x="668" y="216" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">R$ 45</text>
+    </g>
+  </g>
+
+  <!-- MOBILE APP OVERLAY (FLOATING SMARTPHONE) -->
+  <g transform="translate(860, 65)">
+    <!-- Phone Shadow -->
+    <rect x="-8" y="12" width="276" height="526" rx="42" fill="#000000" opacity="0.6" filter="url(#emeraldGlow)" />
+    
+    <!-- Phone Frame -->
+    <rect width="260" height="510" rx="38" fill="#0E1411" stroke="#25352E" stroke-width="3" />
+    <rect x="8" y="8" width="244" height="494" rx="32" fill="#090D0B" />
+    
+    <!-- Dynamic Island / Notch -->
+    <rect x="90" y="14" width="80" height="16" rx="8" fill="#000000" />
+    <circle cx="152" cy="22" r="3" fill="#1E293B" />
+    
+    <!-- Mobile App Header -->
+    <g transform="translate(24, 46)">
+      <text x="0" y="16" fill="#8B9B94" font-family="'Space Grotesk', sans-serif" font-size="10">Barbearia Vintage</text>
+      <text x="0" y="34" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">Olá, Arthur 👋</text>
+      <rect x="172" y="8" width="40" height="26" rx="6" fill="#132A1E" stroke="#223B2D" stroke-width="1" />
+      <text x="180" y="25" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">QR</text>
+    </g>
+
+    <!-- Mobile Cashback Widget -->
+    <g transform="translate(20, 96)">
+      <rect width="220" height="64" rx="10" fill="url(#cardGrad)" stroke="#1F2A25" stroke-width="1" />
+      <text x="14" y="22" fill="#8B9B94" font-family="'Space Grotesk', sans-serif" font-size="9">SEU CASHBACK DISPONÍVEL</text>
+      <text x="14" y="46" fill="#7CF29C" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="700">R$ 22,50</text>
+      <rect x="130" y="24" width="76" height="24" rx="6" fill="#7CF29C" />
+      <text x="142" y="40" fill="#090D0B" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700">Resgatar</text>
+    </g>
+
+    <!-- Mobile Services List -->
+    <g transform="translate(20, 174)">
+      <text x="0" y="12" fill="#E2E8F0" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600">Escolha o Serviço</text>
+      
+      <!-- Service 1 -->
+      <rect y="22" width="220" height="52" rx="8" fill="#121815" stroke="#22302A" stroke-width="1" />
+      <text x="12" y="42" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600">Corte Degradê Navalha</text>
+      <text x="12" y="58" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="10">R$ 45,00 · 40 min</text>
+      <circle cx="198" cy="48" r="9" fill="#1B3326" stroke="#7CF29C" stroke-width="1.5" />
+      <path d="M 195 48 L 197 51 L 202 45" fill="none" stroke="#7CF29C" stroke-width="1.5" />
+
+      <!-- Service 2 -->
+      <rect y="82" width="220" height="52" rx="8" fill="#121815" stroke="#22302A" stroke-width="1" />
+      <text x="12" y="102" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600">Barboterapia Completa</text>
+      <text x="12" y="118" fill="#8B9B94" font-family="'JetBrains Mono', monospace" font-size="10">R$ 35,00 · 30 min</text>
+      <circle cx="198" cy="108" r="9" fill="#16201B" stroke="#2A3830" stroke-width="1" />
+
+      <!-- Service 3 -->
+      <rect y="142" width="220" height="52" rx="8" fill="#121815" stroke="#22302A" stroke-width="1" />
+      <text x="12" y="162" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="600">Combo Cabelo + Barba</text>
+      <text x="12" y="178" fill="#8B9B94" font-family="'JetBrains Mono', monospace" font-size="10">R$ 70,00 · 60 min</text>
+      <circle cx="198" cy="168" r="9" fill="#16201B" stroke="#2A3830" stroke-width="1" />
+    </g>
+
+    <!-- Mobile CTA Button -->
+    <g transform="translate(20, 440)">
+      <rect width="220" height="42" rx="10" fill="url(#accentGrad)" />
+      <text x="56" y="26" fill="#0B0E0D" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700">Avançar Horário ➔</text>
+    </g>
+  </g>
+</svg>
