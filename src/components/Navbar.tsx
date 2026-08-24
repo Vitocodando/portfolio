@@ -29,6 +29,12 @@ export const Navbar: React.FC = () => {
       {/* Brand */}
       <Link
         to="/"
+        onClick={(e) => {
+          if (!isSolutionsPage) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }}
         style={{
           fontFamily: 'var(--font-mono)',
           fontSize: '14px',
