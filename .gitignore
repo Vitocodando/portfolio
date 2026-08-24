@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+dist/
+dist-ssr/
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Editor & System
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
