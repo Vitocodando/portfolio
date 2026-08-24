@@ -17,10 +17,19 @@
     body { margin: 0; background: #0B0E0D; }
     ::selection { background: rgba(124,242,156,0.25); }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
+
+    .pulse-dot { animation: pulseDot 2s ease-in-out infinite; }
+    .mockup-img { width: 100%; height: auto; display: block; border-radius: 8px; transition: transform 0.3s ease, filter 0.3s ease; }
+    .mockup-img:hover { transform: scale(1.015); }
+    
+    .other-projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .project-card { border: 1px solid #1F2624; border-radius: 12px; background: #0D110F; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.2s ease, transform 0.2s ease; }
+    .project-card:hover { border-color: #3A4643; transform: translateY(-2px); }
 
     /* Responsivo — !important necessário para sobrepor estilos inline */
     @media (max-width: 1024px) {
-      .hero-grid { grid-template-columns: 1fr 260px !important; gap: 40px !important; }
+      .hero-grid { grid-template-columns: 1fr 320px !important; gap: 40px !important; }
       .hero-title { font-size: 52px !important; }
     }
     @media (max-width: 860px) {
@@ -28,9 +37,10 @@
       .nav-links { display: none !important; }
       .container { padding: 56px 20px !important; }
       .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 56px 20px 48px !important; }
-      .hero-photo { width: 100%; max-width: 360px; }
+      .hero-photo { width: 100%; max-width: 480px; }
       .section-split { grid-template-columns: 1fr !important; gap: 24px !important; }
       .project-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .other-projects-grid { grid-template-columns: 1fr !important; }
       .feats-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .stack-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
@@ -39,8 +49,7 @@
       .project-title { font-size: 32px !important; }
       .contact-title { font-size: 34px !important; }
       .contact-email { font-size: 16px !important; word-break: break-all; }
-      .feats-grid, .stack-grid, .edu-grid { grid-template-columns: 1fr !important; }
-      .project-grid .sc-host-x, .project-grid .shot-slot { height: 220px !important; }
+      .feats-grid, .stack-grid, .edu-grid, .other-projects-grid { grid-template-columns: 1fr !important; }
       .footer-row { flex-direction: column !important; align-items: flex-start !important; }
     }
   </style>
@@ -68,7 +77,7 @@
 
   <!-- HERO -->
   <header id="top" data-screen-label="Hero" style="background-image: {{ gridBg }}; background-size: 48px 48px; border-bottom: 1px solid #1F2624;">
-    <div class="hero-grid" style="max-width: 1080px; margin: 0 auto; padding: 96px 32px 88px; display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: center; animation: fadeUp 0.6s ease both;">
+    <div class="hero-grid" style="max-width: 1080px; margin: 0 auto; padding: 96px 32px 88px; display: grid; grid-template-columns: 1fr 360px; gap: 56px; align-items: center; animation: fadeUp 0.6s ease both;">
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">{{ t.hero.kicker }}</div>
         <h1 class="hero-title" style="margin: 0; font-size: 64px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em;">Victor Arthur</h1>
@@ -87,9 +96,52 @@
           <a href="mailto:arthurvictor552@gmail.com" style="color: #8B9691; text-decoration: none;" style-hover="color: {{ accent }};">email ↗</a>
         </div>
       </div>
+      
+      <!-- DEVELOPER STATUS TERMINAL CARD (SUBSTITUINDO FOTO PESSOAL) -->
       <div class="hero-photo" style="display: flex; flex-direction: column; gap: 12px;">
-        <div style="position: relative; border: 1px solid #2A3230; border-radius: 12px; padding: 10px; background: #10141326;">
-          <img src="uploads/foto-1783131299341.jpg" alt="Victor Arthur" style="display: block; width: 100%; height: 340px; object-fit: cover; object-position: 50% 30%; border-radius: 8px; filter: saturate(0.85);">
+        <div style="position: relative; border: 1px solid #2A3230; border-radius: 12px; padding: 18px; background: #0E1210; box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
+          
+          <!-- Terminal Title Bar -->
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1F2624; padding-bottom: 12px; margin-bottom: 14px;">
+            <div style="display: flex; gap: 6px;">
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: #EF4444; opacity: 0.85;"></div>
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: #F59E0B; opacity: 0.85;"></div>
+              <div style="width: 10px; height: 10px; border-radius: 50%; background: #10B981; opacity: 0.85;"></div>
+            </div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5A655F;">victor@developer:~</div>
+          </div>
+
+          <!-- Status Indicator -->
+          <div style="display: flex; align-items: center; gap: 8px; background: rgba(124,242,156,0.06); border: 1px solid rgba(124,242,156,0.22); border-radius: 6px; padding: 7px 12px; margin-bottom: 12px;">
+            <div class="pulse-dot" style="width: 8px; height: 8px; border-radius: 50%; background: {{ accent }}; box-shadow: 0 0 8px {{ accent }};"></div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: {{ accent }};">{{ t.hero.statusBadge }}</div>
+          </div>
+
+          <!-- Code / Telemetry Content -->
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.65; color: #A9B3AE; background: #060807; border-radius: 8px; padding: 14px; border: 1px solid #19201D;">
+            <div style="color: #5A655F;">// fullstack engineer</div>
+            <div><span style="color: {{ accent }};">const</span> engineer = {</div>
+            <div style="padding-left: 12px;">role: <span style="color: #6EA8FE;">'Fullstack'</span>,</div>
+            <div style="padding-left: 12px;">stack: [<span style="color: #6EA8FE;">'React 19'</span>, <span style="color: #6EA8FE;">'Node 22'</span>],</div>
+            <div style="padding-left: 12px;">database: [<span style="color: #6EA8FE;">'PostgreSQL'</span>, <span style="color: #6EA8FE;">'Prisma'</span>],</div>
+            <div style="padding-left: 12px;">mobile: <span style="color: #6EA8FE;">'Expo / RN'</span>,</div>
+            <div style="padding-left: 12px;">saas: <span style="color: #7CF29C;">'Razorfy (Live)'</span></div>
+            <div>};</div>
+          </div>
+
+          <!-- Quick Metrics Footer -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;">
+            <div style="border: 1px solid #1F2624; border-radius: 6px; padding: 8px 10px; background: #080B0A;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #5A655F;">SaaS EM PRODUÇÃO</div>
+              <div style="font-size: 12px; font-weight: 600; color: {{ accent }}; margin-top: 2px;">Razorfy</div>
+            </div>
+            <div style="border: 1px solid #1F2624; border-radius: 6px; padding: 8px 10px; background: #080B0A;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #5A655F;">REPOSITÓRIOS</div>
+              <div style="font-size: 12px; font-weight: 600; color: #E8EDEA; margin-top: 2px;">GitHub /Vitocodando</div>
+            </div>
+          </div>
+
+          <!-- Cyber Corners -->
           <div style="position: absolute; top: -1px; left: -1px; width: 18px; height: 18px; border-top: 2px solid {{ accent }}; border-left: 2px solid {{ accent }}; border-radius: 4px 0 0 0;"></div>
           <div style="position: absolute; bottom: -1px; right: -1px; width: 18px; height: 18px; border-bottom: 2px solid {{ accent }}; border-right: 2px solid {{ accent }}; border-radius: 0 0 4px 0;"></div>
         </div>
@@ -109,31 +161,40 @@
     </div>
   </section>
 
-  <!-- PROJETO -->
+  <!-- PROJETOS -->
   <section id="projetos" data-screen-label="Projetos" style="border-bottom: 1px solid #1F2624; background: #0D110F;">
-    <div class="container" style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: flex; flex-direction: column; gap: 40px;">
+    <div class="container" style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: flex; flex-direction: column; gap: 48px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 02 — {{ t.project.label }}</div>
 
+      <!-- PROJETO PRINCIPAL (RAZORFY) -->
       <div class="project-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
         <div style="display: flex; flex-direction: column; gap: 18px;">
           <h2 class="project-title" style="margin: 0; font-size: 44px; font-weight: 700; letter-spacing: -0.02em;">Razorfy</h2>
           <div style="font-size: 18px; font-weight: 500; color: {{ accent }};">{{ t.project.tagline }}</div>
           <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #A9B3AE; text-wrap: pretty;">{{ t.project.desc }}</p>
+          
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
-            <sc-for list="{{ razorfyStack }}" as="chip" hint-placeholder-count="8">
-              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A9B3AE; border: 1px solid #2A3230; border-radius: 999px; padding: 5px 12px;">{{ chip }}</span>
+            <sc-for list="{{ razorfyStack }}" as="chip" hint-placeholder-count="10">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A9B3AE; border: 1px solid #2A3230; background: #0B0E0D; border-radius: 999px; padding: 5px 12px;">{{ chip }}</span>
             </sc-for>
           </div>
+
           <div style="display: flex; gap: 14px; margin-top: 8px; flex-wrap: wrap;">
             <a href="https://razorfy.online" target="_blank" style="font-size: 14px; font-weight: 600; color: #0B0E0D; background: {{ accent }}; border-radius: 8px; padding: 11px 20px; text-decoration: none;" style-hover="opacity: 0.85;">razorfy.online ↗</a>
+            <a href="https://github.com/Vitocodando/Razorfy" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #E8EDEA; border: 1px solid #2A3230; border-radius: 8px; padding: 11px 18px; text-decoration: none;" style-hover="border-color: {{ accent }}; color: {{ accent }};">{{ t.project.code }} ↗</a>
           </div>
         </div>
+
+        <!-- MOCKUP REAL RAZORFY -->
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="razorfy-shot" class="shot-slot" shape="rounded" radius="10" placeholder="screenshot do Razorfy" style="width: 100%; height: 320px; border: 1px solid #2A3230; border-radius: 10px;" hint-size="100%,320px"></x-import>
+          <div style="position: relative; border: 1px solid #25332C; border-radius: 12px; overflow: hidden; background: #080B0A; box-shadow: 0 16px 36px rgba(0,0,0,0.6);">
+            <img src="uploads/mockup-razorfy-real.png" alt="Razorfy Real Mockup" class="mockup-img">
+          </div>
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A655F;">{{ t.project.shotCaption }}</div>
         </div>
       </div>
 
+      <!-- ARQUITETURA RAZORFY CARDS -->
       <div class="feats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
         <sc-for list="{{ feats }}" as="f" hint-placeholder-count="6">
           <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 22px; background: #0B0E0D; display: flex; flex-direction: column; gap: 8px;" style-hover="border-color: #3A4643;">
@@ -144,6 +205,110 @@
         </sc-for>
       </div>
 
+      <!-- OUTROS PROJETOS DO GITHUB -->
+      <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// {{ t.project.otherLabel }}</div>
+          <div style="font-size: 15px; color: #8B9691;">{{ t.project.otherDesc }}</div>
+        </div>
+
+        <div class="other-projects-grid">
+          <!-- CARD 1: DELUKAZ -->
+          <div class="project-card">
+            <div style="border-bottom: 1px solid #1F2624; overflow: hidden; background: #07090B;">
+              <img src="uploads/mockup-delukaz-real.png" alt="DeLukaz Real Mockup" class="mockup-img">
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; gap: 14px; flex: 1; justify-content: space-between;">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #E2B774; text-transform: uppercase;">{{ t.delukaz.type }}</div>
+                <div style="font-size: 20px; font-weight: 700; color: #E8EDEA;">{{ t.delukaz.title }}</div>
+                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #8B9691; text-wrap: pretty;">{{ t.delukaz.desc }}</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                  <sc-for list="{{ delukazStack }}" as="st" hint-placeholder-count="5">
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A9B3AE; background: #0B0E0D; border: 1px solid #232D28; border-radius: 6px; padding: 4px 8px;">{{ st }}</span>
+                  </sc-for>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                  <a href="https://delukaz-portfolio.vercel.app" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: #0B0E0D; background: #E2B774; border-radius: 6px; padding: 8px 14px; text-decoration: none;" style-hover="opacity: 0.85;">Live Demo ↗</a>
+                  <a href="https://github.com/Vitocodando/delukaz-portfolio" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #C7CFCA; border: 1px solid #2A3230; border-radius: 6px; padding: 8px 14px; text-decoration: none;" style-hover="border-color: {{ accent }}; color: {{ accent }};">GitHub ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: NLW META GAME AI AGENT -->
+          <div class="project-card">
+            <div style="border-bottom: 1px solid #1F2624; overflow: hidden; background: #07060D;">
+              <img src="uploads/mockup-nlw-real.png" alt="NLW Meta Game AI Agent Real Mockup" class="mockup-img">
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; gap: 14px; flex: 1; justify-content: space-between;">
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #C084FC; text-transform: uppercase;">{{ t.nlw.type }}</div>
+                <div style="font-size: 20px; font-weight: 700; color: #E8EDEA;">{{ t.nlw.title }}</div>
+                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #8B9691; text-wrap: pretty;">{{ t.nlw.desc }}</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                  <sc-for list="{{ nlwStack }}" as="st" hint-placeholder-count="5">
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A9B3AE; background: #0B0E0D; border: 1px solid #232D28; border-radius: 6px; padding: 4px 8px;">{{ st }}</span>
+                  </sc-for>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                  <a href="https://github.com/Vitocodando/projeto-nlw" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: #0B0E0D; background: #C084FC; border-radius: 6px; padding: 8px 14px; text-decoration: none;" style-hover="opacity: 0.85;">GitHub Repo ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: WORDPRESS ADMIN SECURITY SHIELD -->
+          <div class="project-card" style="padding: 24px; justify-content: space-between;">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{ accent }}; text-transform: uppercase;">{{ t.wpShield.type }}</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5A655F;">Security Hardening</div>
+              </div>
+              <div style="font-size: 20px; font-weight: 700; color: #E8EDEA;">{{ t.wpShield.title }}</div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #8B9691; text-wrap: pretty;">{{ t.wpShield.desc }}</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 18px;">
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <sc-for list="{{ wpShieldStack }}" as="st" hint-placeholder-count="4">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A9B3AE; background: #0B0E0D; border: 1px solid #232D28; border-radius: 6px; padding: 4px 8px;">{{ st }}</span>
+                </sc-for>
+              </div>
+              <div>
+                <a href="https://github.com/Vitocodando/wordpress-admin-block" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #C7CFCA; border: 1px solid #2A3230; border-radius: 6px; padding: 8px 14px; text-decoration: none;" style-hover="border-color: {{ accent }}; color: {{ accent }};">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4: PORTFOLIO FACULDADE UNIALFA -->
+          <div class="project-card" style="padding: 24px; justify-content: space-between;">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6EA8FE; text-transform: uppercase;">{{ t.academic.type }}</div>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5A655F;">B.Sc. Foundations</div>
+              </div>
+              <div style="font-size: 20px; font-weight: 700; color: #E8EDEA;">{{ t.academic.title }}</div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #8B9691; text-wrap: pretty;">{{ t.academic.desc }}</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 18px;">
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <sc-for list="{{ academicStack }}" as="st" hint-placeholder-count="4">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #A9B3AE; background: #0B0E0D; border: 1px solid #232D28; border-radius: 6px; padding: 4px 8px;">{{ st }}</span>
+                </sc-for>
+              </div>
+              <div>
+                <a href="https://github.com/Vitocodando/portifolioFaculdade" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #C7CFCA; border: 1px solid #2A3230; border-radius: 6px; padding: 8px 14px; text-decoration: none;" style-hover="border-color: {{ accent }}; color: {{ accent }};">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GITHUB CALLOUT BANNER -->
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; border: 1px dashed #2A3230; border-radius: 10px; padding: 22px 26px; flex-wrap: wrap;">
         <div style="display: flex; flex-direction: column; gap: 4px;">
           <div style="font-size: 16px; font-weight: 600;">{{ t.project.moreLabel }}</div>
@@ -160,10 +325,10 @@
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 03 — {{ t.stack.label }}</div>
       <div class="stack-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
         <sc-for list="{{ skills }}" as="g" hint-placeholder-count="4">
-          <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 14px; background: #0D110F;">
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{ accent }}; letter-spacing: 0.06em; text-transform: uppercase;">{{ g.label }}</div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
-              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="5">
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="7">
                 <div style="font-size: 14px; color: #C7CFCA; display: flex; align-items: baseline; gap: 8px;"><span style="color: #5A655F; font-family: 'JetBrains Mono', monospace; font-size: 11px;">›</span>{{ it }}</div>
               </sc-for>
             </div>
@@ -205,16 +370,16 @@
     <div class="container section-split" style="max-width: 1080px; margin: 0 auto; padding: 80px 32px; display: grid; grid-template-columns: 260px 1fr; gap: 48px;">
       <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: {{ accent }};">// 05 — {{ t.edu.label }}</div>
       <div class="edu-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-        <div style="grid-column: 1 / -1; border: 1px solid #1F2624; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px;">
+        <div style="grid-column: 1 / -1; border: 1px solid #1F2624; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px; background: #0D110F;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A655F;">{{ t.edu.period }}</div>
           <div style="font-size: 19px; font-weight: 600;">{{ t.edu.degree }}</div>
           <div style="font-size: 14px; color: #8B9691;">UNIALFA – Centro Universitário Alves Faria · Goiânia, GO</div>
         </div>
-        <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px;">
+        <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px; background: #0D110F;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{ accent }}; letter-spacing: 0.06em; text-transform: uppercase;">{{ t.edu.certLabel }}</div>
           <div style="font-size: 15px; color: #C7CFCA;">NLW Agents — Rocketseat</div>
         </div>
-        <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px;">
+        <div style="border: 1px solid #1F2624; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 6px; background: #0D110F;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{ accent }}; letter-spacing: 0.06em; text-transform: uppercase;">{{ t.edu.langLabel }}</div>
           <div style="font-size: 15px; color: #C7CFCA;">{{ t.edu.langs }}</div>
         </div>
@@ -240,7 +405,7 @@
 
   <footer style="border-top: 1px solid #1F2624;">
     <div class="footer-row" style="max-width: 1080px; margin: 0 auto; padding: 28px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A655F;">
-      <div>© 2026 Victor Arthur</div>
+      <div>© 2026 Victor Arthur · github.com/Vitocodando</div>
       <div>{{ t.footer }}</div>
     </div>
   </footer>
@@ -260,28 +425,52 @@ class Component extends DCLogic {
   dict() {
     return {
       pt: {
-        nav: { about: 'Sobre', project: 'Projetos', stack: 'Stack', exp: 'Experiência', contact: 'Contato', cv: 'Baixar CV' },
+        nav: { about: 'Sobre', project: 'Projetos', stack: 'Stack', exp: 'Experiência', contact: 'Contato', cv: 'Baixar Currículo' },
         hero: {
           kicker: '// desenvolvedor fullstack',
           role: 'Fullstack · React & Node.js',
           sub: 'Engenheiro de Software em formação · UNIALFA',
-          desc: 'Construo produtos web de ponta a ponta — do banco de dados à interface. Criador do Razorfy, plataforma SaaS multi-tenant de agendamento para barbearias, em produção na web e no mobile.',
-          ctaProject: 'Ver projeto em destaque',
-          ctaCv: 'Baixar CV',
+          desc: 'Construo produtos web e mobile de alta escala — do banco de dados à interface de usuário. Criador do Razorfy (SaaS multi-tenant em produção) e desenvolvedor de soluções completas com React, Node.js e TypeScript.',
+          ctaProject: 'Ver projetos em destaque',
+          ctaCv: 'Baixar Currículo',
+          statusBadge: 'Disponível para Oportunidades',
           loc: 'Goiânia · GO · Brasil'
         },
         about: {
           label: 'SOBRE MIM',
-          p1: 'Sou desenvolvedor fullstack com foco em React e Node.js. Comecei no front-end criando e mantendo sites em WordPress e evoluí para construir sistemas completos: API, banco de dados, autenticação, web e mobile.',
-          p2: 'Curso Engenharia de Software na UNIALFA (2025–2029) e tenho inglês avançado. Meu maior projeto até aqui é o Razorfy — um SaaS real, com arquitetura multi-tenant, segurança de produção e deploy contínuo — onde pratico decisões de engenharia de ponta a ponta.'
+          p1: 'Sou desenvolvedor fullstack com foco em React e Node.js. Comecei no front-end criando e mantendo sites em WordPress e evoluí para construir sistemas de produção completos: arquitetura de API, banco relacional, segurança, 2FA, web e mobile.',
+          p2: 'Curso Engenharia de Software na UNIALFA (2025–2029) e possuo inglês avançado. Meu maior projeto em produção é o Razorfy — plataforma SaaS multi-tenant com segurança de nível corporativo, eventos assíncronos e deploy contínuo.'
         },
         project: {
           label: 'PROJETO EM DESTAQUE',
-          tagline: 'SaaS multi-tenant de agendamento para barbearias',
-          desc: 'Uma única instância atende várias barbearias com isolamento rígido de dados. Clientes agendam e acompanham cashback pelo app; barbeiros e admins gerenciam agenda, catálogo e fluxo de caixa; um backoffice de plataforma faz onboarding e gestão dos tenants. Web, mobile e API em produção.',
-          code: 'Ver código',
-          moreLabel: 'Outros projetos',
-          moreDesc: 'Mais experimentos e repositórios no meu GitHub.'
+          tagline: 'SaaS multi-tenant de agendamento & gestão para barbearias',
+          desc: 'Uma única instância atende várias barbearias com isolamento rígido de dados (RLS). Clientes agendam e acompanham cashback pelo app móvel; barbeiros e admins gerenciam agenda, catálogo e fluxo de caixa; um backoffice mestre (/platform) faz onboarding e controle dos tenants. Web SPA, Mobile App e API Express em produção.',
+          code: 'Ver código no GitHub',
+          shotCaption: '// Razorfy Web SPA, Dashboard & Mobile App em produção real',
+          otherLabel: 'OUTROS PROJETOS & REPOSITÓRIOS GITHUB',
+          otherDesc: 'Aplicações web, agentes de inteligência artificial e utilitários de segurança desenvolvidos com código limpo e boas práticas.',
+          moreLabel: 'Mais no GitHub',
+          moreDesc: 'Acesse o perfil completo com todos os repositórios e contribuições ativas.'
+        },
+        delukaz: {
+          title: 'DeLukaz (DLUKZ)',
+          type: 'Web Application · Vitrine Musical & Eventos',
+          desc: 'Plataforma e portfólio digital para o DJ e produtor musical DeLukaz (House, Tech House e Melodic Techno). Apresenta player de sets, agenda de eventos, galeria visual imersiva e canal direto para contratação.'
+        },
+        nlw: {
+          title: 'NLW Game Meta AI Agent',
+          type: 'GenAI · Análise de Metas em Tempo Real',
+          desc: 'Assistente inteligente integrado à API do Google Gemini (gemini-2.5-flash) para consultar em tempo real as melhores estratégias, builds de itens, runas e tendências competitivas com base no patch mais recente dos jogos.'
+        },
+        wpShield: {
+          title: 'WordPress Admin Security Shield',
+          type: 'Segurança & Módulo WordPress',
+          desc: 'Plugin de segurança desenvolvido para proteção contra escalonamento de privilégios. Bloqueia a criação não autorizada de usuários administradores via painel, reforçando a governança de permissões no CMS.'
+        },
+        academic: {
+          title: 'Engenharia de Software (UNIALFA)',
+          type: 'Projeto Acadêmico & Fundamentos',
+          desc: 'Projeto e base acadêmica demonstrando fundamentos de computação, estruturas de dados, algoritmos e desenvolvimento web moderno durante a graduação em Engenharia de Software na UNIALFA.'
         },
         stack: { label: 'STACK & HABILIDADES' },
         exp: { label: 'EXPERIÊNCIA' },
@@ -307,24 +496,47 @@ class Component extends DCLogic {
           kicker: '// fullstack developer',
           role: 'Fullstack · React & Node.js',
           sub: 'Software Engineering undergraduate · UNIALFA',
-          desc: 'I build web products end to end — from the database to the interface. Creator of Razorfy, a multi-tenant SaaS booking platform for barbershops, live on web and mobile.',
-          ctaProject: 'See featured project',
+          desc: 'I build high-scale web and mobile products — from database architecture to user interface. Creator of Razorfy (multi-tenant SaaS in production) and builder of complete systems with React, Node.js and TypeScript.',
+          ctaProject: 'See featured projects',
           ctaCv: 'Download resume',
+          statusBadge: 'Open to Opportunities',
           loc: 'Goiânia · Brazil'
         },
         about: {
           label: 'ABOUT ME',
-          p1: 'I am a fullstack developer focused on React and Node.js. I started in front-end building and maintaining WordPress sites and grew into shipping complete systems: API, database, authentication, web and mobile.',
-          p2: 'I study Software Engineering at UNIALFA (2025–2029) and speak advanced English. My biggest project so far is Razorfy — a real SaaS with multi-tenant architecture, production-grade security and continuous deployment — where I practice end-to-end engineering decisions.'
+          p1: 'I am a fullstack developer focused on React and Node.js. I started in front-end building and maintaining WordPress sites and grew into shipping complete production systems: API architecture, relational databases, security, 2FA, web and mobile.',
+          p2: 'I study Software Engineering at UNIALFA (2025–2029) and speak advanced English. My flagship production project is Razorfy — a multi-tenant SaaS platform with production-grade security, domain events and continuous deployment.'
         },
         project: {
           label: 'FEATURED PROJECT',
-          tagline: 'Multi-tenant SaaS booking platform for barbershops',
-          desc: 'A single instance serves multiple barbershops with strict data isolation. Clients book and track cashback through the app; barbers and admins manage schedule, catalog and cash flow; a platform backoffice handles tenant onboarding and management. Web, mobile and API in production.',
-          code: 'View code',
-          shotCaption: '// drop a product screenshot here',
-          moreLabel: 'Other projects',
-          moreDesc: 'More experiments and repositories on my GitHub.'
+          tagline: 'Multi-tenant SaaS booking & management platform for barbershops',
+          desc: 'A single instance serves multiple barbershops with strict data isolation (RLS). Clients book and track cashback through the mobile app; barbers and admins manage schedule, catalog and cash flow; a platform backoffice (/platform) handles tenant onboarding and management. Web SPA, Mobile App and Express API in production.',
+          code: 'View code on GitHub',
+          shotCaption: '// Razorfy Web SPA, Dashboard & Mobile App in real production',
+          otherLabel: 'OTHER GITHUB PROJECTS & EXPERIMENTS',
+          otherDesc: 'Web applications, GenAI assistants and security utilities built with clean code and high performance.',
+          moreLabel: 'More on GitHub',
+          moreDesc: 'Explore my full GitHub profile with all repositories and active contributions.'
+        },
+        delukaz: {
+          title: 'DeLukaz (DLUKZ)',
+          type: 'Web Application · Music & Events Showcase',
+          desc: 'Digital showcase and portfolio for DJ & music producer DeLukaz (House, Tech House & Melodic Techno). Features audio set previews, gig calendar, immersive media gallery and event booking inquiries.'
+        },
+        nlw: {
+          title: 'NLW Game Meta AI Agent',
+          type: 'GenAI · Real-time Meta Analyst',
+          desc: 'Intelligent assistant integrated with Google Gemini API (gemini-2.5-flash) to query real-time competitive strategies, item builds, runes and meta trends based on the latest game patches.'
+        },
+        wpShield: {
+          title: 'WordPress Admin Security Shield',
+          type: 'Security & WordPress Module',
+          desc: 'Security plugin developed to prevent privilege escalation. Blocks unauthorized creation of administrator users through the admin panel, enforcing strict CMS governance.'
+        },
+        academic: {
+          title: 'Software Engineering (UNIALFA)',
+          type: 'Academic Project & Foundations',
+          desc: 'Academic project and showcase demonstrating computer science fundamentals, data structures, algorithms and modern web development during the B.Sc. in Software Engineering at UNIALFA.'
         },
         stack: { label: 'STACK & SKILLS' },
         exp: { label: 'EXPERIENCE' },
@@ -351,12 +563,12 @@ class Component extends DCLogic {
     if (lang === 'en') {
       return {
         feats: [
-          { num: '01', title: 'Multi-tenant', desc: 'Strict per-tenant data isolation with a white-label experience per barbershop, connected via code or QR.' },
-          { num: '02', title: 'Event-driven', desc: 'Post-commit domain event bus with isolated listeners — future-proof for WebSockets.' },
-          { num: '03', title: 'Security', desc: 'TOTP 2FA, rate limiting, JWT revocation, Postgres RLS and multi-tenant IDOR guards.' },
-          { num: '04', title: 'WhatsApp notifications', desc: 'Persistent outbox with retry and backoff — confirmations, reminders, win-back and OTP.' },
-          { num: '05', title: 'Cashback loyalty', desc: 'Accrual, hold and redemption with pessimistic locks and anti-overbooking constraints.' },
-          { num: '06', title: 'Web · Mobile · Backoffice', desc: 'React 19 + Vite SPA, Expo/React Native app and a platform admin panel in one product.' }
+          { num: '01', title: 'Multi-tenant RLS', desc: 'Strict per-tenant data isolation with a white-label experience per barbershop, connected via code or QR.' },
+          { num: '02', title: 'Event-driven Bus', desc: 'Post-commit domain event bus with isolated listeners and persistent outbox with retry.' },
+          { num: '03', title: 'Enterprise Security', desc: 'TOTP 2FA (AES-256 encrypted), IP rate limiting, JWT revocation list, Postgres RLS and anti-IDOR guards.' },
+          { num: '04', title: 'WhatsApp Outbox', desc: 'Persistent outbox with backoff — appointment confirmations, reminders, win-back campaigns and OTP.' },
+          { num: '05', title: 'Cashback & Cash Flow', desc: 'Accrual, hold and redemption with pessimistic locks (SELECT FOR UPDATE) and anti-overbooking constraints.' },
+          { num: '06', title: 'Web · Mobile · Backoffice', desc: 'React 19 + Vite SPA, Expo/React Native app and a dedicated /platform master admin panel in production.' }
         ],
         jobs: [
           { period: 'Apr 2025 – Jun 2026', role: 'Front-end Web Developer', org: 'M2 Soluções e Tecnologia · Goiânia, GO', points: [
@@ -373,12 +585,12 @@ class Component extends DCLogic {
     }
     return {
       feats: [
-        { num: '01', title: 'Multi-tenant', desc: 'Isolamento rígido de dados por tenant, com experiência white-label por barbearia, conectada via código ou QR.' },
-        { num: '02', title: 'Orientado a eventos', desc: 'Barramento de eventos de domínio pós-commit com listeners isolados — pronto para evoluir a WebSockets.' },
-        { num: '03', title: 'Segurança', desc: '2FA TOTP, rate limiting, revogação de JWT, RLS no Postgres e guardas anti-IDOR multi-tenant.' },
-        { num: '04', title: 'Notificações WhatsApp', desc: 'Outbox persistente com retry e backoff — confirmações, lembretes, win-back e OTP.' },
-        { num: '05', title: 'Fidelidade por cashback', desc: 'Acúmulo, reserva e resgate com locks pessimistas e restrições anti-overbooking.' },
-        { num: '06', title: 'Web · Mobile · Backoffice', desc: 'SPA React 19 + Vite, app Expo/React Native e painel de plataforma em um só produto.' }
+        { num: '01', title: 'Multi-tenant com RLS', desc: 'Isolamento rígido de dados por tenant, com experiência white-label por barbearia, conectada via código ou QR.' },
+        { num: '02', title: 'Orientado a Eventos', desc: 'Barramento de eventos de domínio pós-commit com listeners isolados e outbox persistente com retry.' },
+        { num: '03', title: 'Segurança & 2FA', desc: '2FA TOTP (cifrado em AES-256), rate limiting por IP, revogação de JWT, RLS no Postgres e guardas anti-IDOR.' },
+        { num: '04', title: 'Notificações WhatsApp', desc: 'Outbox persistente com retry e backoff — confirmações de horário, lembretes, win-back e OTP via WaSenderAPI.' },
+        { num: '05', title: 'Cashback & Financeiro', desc: 'Acúmulo, reserva e resgate com locks pessimistas (SELECT FOR UPDATE) e restrições anti-overbooking no Postgres.' },
+        { num: '06', title: 'Web · Mobile · Backoffice', desc: 'SPA React 19 + Vite, app móvel Expo/React Native e painel de plataforma (/platform) em produção.' }
       ],
       jobs: [
         { period: 'abr 2025 – jun 2026', role: 'Desenvolvedor Web Front-end', org: 'M2 Soluções e Tecnologia · Goiânia, GO', points: [
@@ -414,17 +626,25 @@ class Component extends DCLogic {
         try { localStorage.setItem('va-portfolio-lang', next); } catch (e) {}
         this.setState({ lang: next });
       },
-      razorfyStack: ['Node.js 22', 'Express', 'Prisma', 'PostgreSQL', 'React 19', 'TypeScript', 'Tailwind CSS', 'Expo / React Native', 'Docker'],
+      razorfyStack: [
+        'Node.js 22', 'Express', 'Prisma 6', 'PostgreSQL (Supabase)',
+        'React 19', 'TypeScript', 'Tailwind CSS v4', 'Expo SDK 56',
+        'Docker', 'WaSenderAPI (WhatsApp)', '2FA TOTP (AES-256)', 'React Query'
+      ],
+      delukazStack: ['JavaScript ES6+', 'HTML5 Semântico', 'CSS3 Moderno', 'Audio Player & Galeria', 'Vercel Deploy'],
+      nlwStack: ['Google Gemini API', 'JavaScript ES6+', 'Showdown.js', 'Prompt Engineering', 'REST'],
+      wpShieldStack: ['PHP', 'WordPress Plugin API', 'Hooks & Actions', 'Security Hardening'],
+      academicStack: ['HTML5', 'CSS3', 'JavaScript', 'Lógica & Algoritmos'],
       skills: lang === 'en' ? [
-        { label: 'Front-end', items: ['React 19', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind CSS', 'React Query', 'HTML & CSS'] },
-        { label: 'Back-end', items: ['Node.js', 'Express', 'Prisma ORM', 'PostgreSQL', 'REST APIs', 'JWT & Auth', 'Zod'] },
-        { label: 'Mobile', items: ['React Native', 'Expo', 'React Navigation'] },
-        { label: 'Infra & tools', items: ['Docker', 'Git & GitHub', 'Supabase', 'Render · Vercel', 'WordPress'] }
+        { label: 'Front-end', items: ['React 19', 'TypeScript', 'JavaScript (ES6+)', 'Vite', 'Tailwind CSS v4', 'React Query', 'Recharts', 'HTML5 & CSS3'] },
+        { label: 'Back-end & APIs', items: ['Node.js 22', 'Express', 'Prisma ORM 6', 'PostgreSQL', 'RESTful APIs', 'JWT & 2FA TOTP', 'Zod Validation', 'PHP / WordPress'] },
+        { label: 'Mobile App', items: ['React Native', 'Expo SDK 56', 'React Navigation', 'Expo SecureStore', 'Expo Camera'] },
+        { label: 'Infra & DevOps', items: ['Docker & Compose', 'Git & GitHub', 'Supabase (PostgreSQL)', 'Render · Vercel', 'Linux / Bash'] }
       ] : [
-        { label: 'Front-end', items: ['React 19', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind CSS', 'React Query', 'HTML & CSS'] },
-        { label: 'Back-end', items: ['Node.js', 'Express', 'Prisma ORM', 'PostgreSQL', 'APIs REST', 'JWT & Auth', 'Zod'] },
-        { label: 'Mobile', items: ['React Native', 'Expo', 'React Navigation'] },
-        { label: 'Infra & ferramentas', items: ['Docker', 'Git & GitHub', 'Supabase', 'Render · Vercel', 'WordPress'] }
+        { label: 'Front-end', items: ['React 19', 'TypeScript', 'JavaScript (ES6+)', 'Vite', 'Tailwind CSS v4', 'React Query', 'Recharts', 'HTML5 & CSS3'] },
+        { label: 'Back-end & APIs', items: ['Node.js 22', 'Express', 'Prisma ORM 6', 'PostgreSQL', 'APIs RESTful', 'JWT & 2FA TOTP', 'Validação Zod', 'PHP / WordPress'] },
+        { label: 'Mobile App', items: ['React Native', 'Expo SDK 56', 'React Navigation', 'Expo SecureStore', 'Expo Camera'] },
+        { label: 'Infra & DevOps', items: ['Docker & Compose', 'Git & GitHub', 'Supabase (PostgreSQL)', 'Render · Vercel', 'Linux / Bash'] }
       ]
     };
   }
