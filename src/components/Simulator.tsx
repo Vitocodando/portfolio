@@ -36,7 +36,6 @@ export const Simulator: React.FC = () => {
     fontSize: '14px',
     transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
     transform: active ? 'scale(1.02)' : 'scale(1)',
-    boxShadow: active ? '0 0 16px rgba(124, 242, 156, 0.16)' : 'none',
   });
 
   return (

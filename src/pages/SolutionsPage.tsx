@@ -13,11 +13,6 @@ export const SolutionsPage: React.FC = () => {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-main)', color: 'var(--text-primary)', position: 'relative', overflowX: 'hidden' }}>
-      {/* Ambient background glows */}
-      <div className="ambient-glow ambient-glow-green" style={{ top: '-120px', left: '-100px', width: '520px', height: '520px' }} />
-      <div className="ambient-glow ambient-glow-blue" style={{ top: '800px', right: '-120px', width: '460px', height: '460px' }} />
-      <div className="ambient-glow ambient-glow-purple" style={{ top: '1900px', left: '-120px', width: '420px', height: '420px' }} />
-
       <FloatingWhatsApp />
 
       {/* HERO SECTION */}

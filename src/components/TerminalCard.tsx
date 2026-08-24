@@ -80,7 +80,6 @@ export const TerminalCard: React.FC = () => {
               height: '8px',
               borderRadius: '50%',
               background: 'var(--accent-green)',
-              boxShadow: '0 0 8px var(--accent-green)',
             }}
           ></div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, color: 'var(--accent-green)' }}>

@@ -29,11 +29,6 @@ export const PortfolioPage: React.FC = () => {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-main)', color: 'var(--text-primary)', position: 'relative', overflowX: 'hidden' }}>
-      {/* Ambient background glows */}
-      <div className="ambient-glow ambient-glow-green" style={{ top: '-100px', left: '-100px', width: '500px', height: '500px' }} />
-      <div className="ambient-glow ambient-glow-blue" style={{ top: '600px', right: '-150px', width: '450px', height: '450px' }} />
-      <div className="ambient-glow ambient-glow-purple" style={{ top: '1600px', left: '-150px', width: '400px', height: '400px' }} />
-
       <FloatingWhatsApp />
 
       {/* HERO SECTION */}
@@ -445,7 +440,7 @@ export const PortfolioPage: React.FC = () => {
               <ScrollReveal key={idx} variant="fade-up" delay={idx * 120}>
                 <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr', gap: '22px', paddingBottom: '40px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
-                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--accent-green)', marginTop: '6px', flex: 'none', boxShadow: '0 0 8px var(--accent-green)' }} />
+                    <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--accent-green)', marginTop: '6px', flex: 'none' }} />
                     <div style={{ width: '1px', flex: 1, background: 'var(--border-muted)' }} />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
