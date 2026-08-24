@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Victor Arthur — Desenvolvimento de Software, Sites & Aplicativos de Alto Impacto</title>
+  <meta name="description" content="Transforme sua ideia ou empresa com Landing Pages de alta conversão, Sistemas Web sob medida, Aplicativos Mobile e Soluções com Inteligência Artificial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #070908; color: #E8EDEA; font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+    ::selection { background: rgba(124,242,156,0.25); }
+
+    @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.15; } 50% { transform: scale(1.08); opacity: 0.25; } }
+    @keyframes floatBadge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+    .pulse-dot { animation: pulseDot 2s ease-in-out infinite; }
+    @keyframes pulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.85); } }
+
+    .hero-glow-1 { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: #7CF29C; filter: blur(160px); opacity: 0.12; animation: pulseGlow 8s ease-in-out infinite alternate; pointer-events: none; }
+    .hero-glow-2 { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: #38BDF8; filter: blur(180px); opacity: 0.08; pointer-events: none; }
+    
+    .glow-card { position: relative; border: 1px solid #1C2420; background: rgba(13,17,15,0.7); backdrop-filter: blur(12px); border-radius: 14px; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+    .glow-card:hover { border-color: rgba(124,242,156,0.35); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 24px rgba(124,242,156,0.06); }
+
+    .service-card { border: 1px solid #1C2420; background: #0B0E0D; border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; position: relative; overflow: hidden; }
+    .service-card:hover { border-color: #34443C; transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0,0,0,0.5); }
+    .service-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--accent-color, #7CF29C), transparent); opacity: 0; transition: opacity 0.3s ease; }
+    .service-card:hover::after { opacity: 1; }
+
+    .step-badge { width: 36px; height: 36px; border-radius: 10px; background: rgba(124,242,156,0.1); border: 1px solid rgba(124,242,156,0.25); color: #7CF29C; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; }
+
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: #070908; background: #7CF29C; border-radius: 10px; padding: 16px 28px; text-decoration: none; transition: all 0.2s ease; border: none; cursor: pointer; box-shadow: 0 8px 24px rgba(124,242,156,0.25); }
+    .btn-primary:hover { background: #92f5ad; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(124,242,156,0.38); }
+
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; color: #E8EDEA; background: #121815; border: 1px solid #28352F; border-radius: 10px; padding: 15px 24px; text-decoration: none; transition: all 0.2s ease; cursor: pointer; }
+    .btn-secondary:hover { border-color: #7CF29C; color: #7CF29C; background: #16201C; }
+
+    .mockup-frame { border-radius: 12px; overflow: hidden; border: 1px solid #233029; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.8); transition: transform 0.3s ease; }
+    .mockup-frame:hover { transform: scale(1.015); }
+    .mockup-img { width: 100%; height: auto; display: block; }
+
+    .faq-item { border: 1px solid #1C2420; border-radius: 10px; background: #0B0E0D; overflow: hidden; transition: border-color 0.2s ease; }
+    .faq-item:hover { border-color: #2D3A34; }
+    .faq-header { padding: 20px 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 17px; font-weight: 600; }
+    .faq-body { padding: 0 24px 20px; font-size: 15px; line-height: 1.7; color: #9AA7A0; font-family: 'Inter', sans-serif; }
+
+    .floating-wa { position: fixed; bottom: 28px; right: 28px; z-index: 100; display: flex; align-items: center; gap: 12px; background: #121A16; border: 1px solid rgba(124,242,156,0.35); border-radius: 999px; padding: 10px 18px 10px 12px; box-shadow: 0 16px 36px rgba(0,0,0,0.7), 0 0 20px rgba(124,242,156,0.2); text-decoration: none; transition: all 0.25s ease; }
+    .floating-wa:hover { transform: scale(1.05) translateY(-3px); border-color: #7CF29C; background: #18241F; }
+
+    /* Responsividade */
+    @media (max-width: 960px) {
+      .hero-section { grid-template-columns: 1fr !important; text-align: left; }
+      .services-grid { grid-template-columns: 1fr !important; }
+      .process-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+      .calc-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 600px) {
+      .process-grid { grid-template-columns: 1fr !important; }
+      .stats-bar { grid-template-columns: 1fr !important; }
+      .hero-title { font-size: 38px !important; line-height: 1.1 !important; }
+      .hero-buttons { flex-direction: column !important; width: 100%; }
+      .btn-primary, .btn-secondary { width: 100%; }
+    }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; background: #070908; color: #E8EDEA; position: relative; overflow-x: hidden;">
+
+  <!-- AMBIENT GLOWS -->
+  <div class="hero-glow-1" style="top: -100px; left: 10%;"></div>
+  <div class="hero-glow-2" style="top: 300px; right: 5%;"></div>
+
+  <!-- FLOATING WHATSAPP CTA -->
+  <a href="https://wa.me/5562994267179?text=Ol%C3%A1%20Victor!%20Vim%20pela%20sua%20Landing%20Page%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20o%20meu%20projeto." target="_blank" class="floating-wa">
+    <div style="width: 38px; height: 38px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; font-weight: bold;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <div style="font-size: 11px; color: #7CF29C; font-family: 'JetBrains Mono', monospace; font-weight: 600;">ONLINE AGORA</div>
+      <div style="font-size: 13px; font-weight: 700; color: #fff;">Solicitar Orçamento</div>
+    </div>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav style="position: sticky; top: 0; z-index: 50; height: 70px; background: rgba(7,9,8,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid #1C2420; display: flex; align-items: center; justify-content: space-between; padding: 0 32px;">
+    <a href="../index.html" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; color: #7CF29C; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+      <span>victor.arthur</span><span style="color: #5A655F;">/</span><span style="color: #E8EDEA; background: #16201B; padding: 3px 8px; border-radius: 4px; border: 1px solid #27362E; font-size: 12px;">SOLUÇÕES</span>
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <div style="display: flex; gap: 20px; font-size: 14px;" class="nav-links">
+        <a href="#servicos" style="color: #9AA7A0; text-decoration: none;" style-hover="color: #E8EDEA;">{{ t.nav.services }}</a>
+        <a href="#cases" style="color: #9AA7A0; text-decoration: none;" style-hover="color: #E8EDEA;">{{ t.nav.cases }}</a>
+        <a href="#processo" style="color: #9AA7A0; text-decoration: none;" style-hover="color: #E8EDEA;">{{ t.nav.process }}</a>
+        <a href="#simulador" style="color: #9AA7A0; text-decoration: none;" style-hover="color: #E8EDEA;">{{ t.nav.calc }}</a>
+        <a href="#faq" style="color: #9AA7A0; text-decoration: none;" style-hover="color: #E8EDEA;">{{ t.nav.faq }}</a>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <button onClick="{{ toggleLang }}" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: #8B9691; background: transparent; border: 1px solid #2A3230; border-radius: 6px; padding: 6px 12px; cursor: pointer;" style-hover="color: #7CF29C; border-color: #7CF29C;">{{ langButton }}</button>
+        <a href="https://wa.me/5562994267179?text=Ol%C3%A1%20Victor!%20Gostaria%20de%20fazer%20um%20projeto%20com%20voc%C3%AA." target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: #070908; background: #7CF29C; border-radius: 6px; padding: 8px 16px; text-decoration: none;" style-hover="opacity: 0.85;">{{ t.nav.cta }}</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header style="max-width: 1140px; margin: 0 auto; padding: 90px 32px 70px; position: relative;">
+    <div class="hero-section" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center;">
+      
+      <!-- HERO CONTENT -->
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        
+        <!-- Live Alert Badge -->
+        <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(124,242,156,0.06); border: 1px solid rgba(124,242,156,0.25); border-radius: 999px; padding: 6px 16px; width: fit-content;">
+          <div class="pulse-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #7CF29C; box-shadow: 0 0 10px #7CF29C;"></div>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: #7CF29C;">{{ t.hero.badge }}</span>
+        </div>
+
+        <h1 class="hero-title" style="margin: 0; font-size: 56px; font-weight: 800; line-height: 1.08; letter-spacing: -0.03em;">
+          {{ t.hero.h1Part1 }} <span style="background: linear-gradient(135deg, #7CF29C 0%, #38BDF8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{{ t.hero.h1Highlight }}</span> {{ t.hero.h1Part2 }}
+        </h1>
+
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #A4B2AB; font-family: 'Inter', sans-serif; max-width: 580px;">
+          {{ t.hero.desc }}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-buttons" style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 8px;">
+          <a href="https://wa.me/5562994267179?text=Ol%C3%A1%20Victor!%20Gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20meu%20projeto." target="_blank" class="btn-primary">
+            <span>{{ t.hero.primaryCta }}</span>
+            <span>→</span>
+          </a>
+          <a href="#simulador" class="btn-secondary">
+            <span>{{ t.hero.secondaryCta }}</span>
+          </a>
+        </div>
+
+        <!-- Social Proof Checklist -->
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; font-family: 'Inter', sans-serif; font-size: 13px; color: #8A9891;">
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="color: #7CF29C; font-weight: bold;">✓</span> {{ t.hero.proof1 }}</div>
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="color: #7CF29C; font-weight: bold;">✓</span> {{ t.hero.proof2 }}</div>
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="color: #7CF29C; font-weight: bold;">✓</span> {{ t.hero.proof3 }}</div>
+        </div>
+
+      </div>
+
+      <!-- HERO VISUAL MOCKUP CARD -->
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="glow-card" style="padding: 24px; display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1C2420; padding-bottom: 12px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7CF29C; font-weight: 600;">// CASE EM DESTAQUE</div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5A655F;">100% PRODUÇÃO REAL</span>
+          </div>
+
+          <div class="mockup-frame">
+            <img src="../uploads/mockup-razorfy-real.png" alt="Razorfy Real SaaS Mockup" class="mockup-img">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="font-size: 16px; font-weight: 700; color: #E8EDEA;">Razorfy — SaaS Multi-tenant & Mobile</div>
+            <div style="font-size: 13px; color: #8B9891; font-family: 'Inter', sans-serif;">{{ t.hero.mockupNote }}</div>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="https://razorfy.online" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7CF29C; text-decoration: none; border: 1px solid rgba(124,242,156,0.3); border-radius: 6px; padding: 6px 12px;" style-hover="background: rgba(124,242,156,0.1);">Ver razorfy.online ↗</a>
+            <a href="../index.html#projetos" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #9AA7A0; text-decoration: none; border: 1px solid #232D28; border-radius: 6px; padding: 6px 12px;" style-hover="color: #fff;">Mais Projetos ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- STATS BAR -->
+  <section style="border-top: 1px solid #1C2420; border-bottom: 1px solid #1C2420; background: #0B0E0D;">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 36px 32px;">
+      <div class="stats-bar" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 36px; font-weight: 800; color: #7CF29C; font-family: 'Space Grotesk', sans-serif;">&lt;1.2s</div>
+          <div style="font-size: 14px; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.stats.speed }}</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 36px; font-weight: 800; color: #38BDF8; font-family: 'Space Grotesk', sans-serif;">100%</div>
+          <div style="font-size: 14px; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.stats.responsive }}</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 36px; font-weight: 800; color: #C084FC; font-family: 'Space Grotesk', sans-serif;">AES-256</div>
+          <div style="font-size: 14px; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.stats.security }}</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 36px; font-weight: 800; color: #F59E0B; font-family: 'Space Grotesk', sans-serif;">30 Dias</div>
+          <div style="font-size: 14px; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.stats.support }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS QUE DESENVOLVO -->
+  <section id="servicos" style="max-width: 1140px; margin: 0 auto; padding: 96px 32px;">
+    <div style="display: flex; flex-direction: column; gap: 48px;">
+      
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7CF29C; font-weight: 600;">// SERVIÇOS & SOLUÇÕES</div>
+        <h2 style="margin: 0; font-size: 42px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15;">{{ t.services.title }}</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.services.sub }}</p>
+      </div>
+
+      <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        
+        <!-- CARD 1: LANDING PAGES -->
+        <div class="service-card" style="--accent-color: #7CF29C;">
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(124,242,156,0.1); border: 1px solid rgba(124,242,156,0.25); display: flex; align-items: center; justify-content: center; font-size: 22px;">🚀</div>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #E8EDEA;">{{ t.services.s1Title }}</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.65; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.services.s1Desc }}</p>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #7CF29C;">✓</span> {{ t.services.s1Point1 }}</div>
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #7CF29C;">✓</span> {{ t.services.s1Point2 }}</div>
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #7CF29C;">✓</span> {{ t.services.s1Point3 }}</div>
+            </div>
+          </div>
+          <a href="https://wa.me/5562994267179?text=Ol%C3%A1%20Victor!%20Quero%20uma%20Landing%20Page%20de%20alta%20convers%C3%A3o." target="_blank" style="margin-top: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7CF29C; text-decoration: none; font-weight: 600;" style-hover="text-decoration: underline;">Criar Landing Page →</a>
+        </div>
+
+        <!-- CARD 2: SISTEMAS WEB & SAAS -->
+        <div class="service-card" style="--accent-color: #38BDF8;">
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); display: flex; align-items: center; justify-content: center; font-size: 22px;">💻</div>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #E8EDEA;">{{ t.services.s2Title }}</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.65; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.services.s2Desc }}</p>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #38BDF8;">✓</span> {{ t.services.s2Point1 }}</div>
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #38BDF8;">✓</span> {{ t.services.s2Point2 }}</div>
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #38BDF8;">✓</span> {{ t.services.s2Point3 }}</div>
+            </div>
+          </div>
+          <a href="https://wa.me/5562994267179?text=Ol%C3%A1%20Victor!%20Quero%20desenvolver%20um%20Sistema%20Web%20ou%20SaaS." target="_blank" style="margin-top: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #38BDF8; text-decoration: none; font-weight: 600;" style-hover="text-decoration: underline;">Desenvolver Sistema →</a>
+        </div>
+
+        <!-- CARD 3: APPS MOBILE & IA -->
+        <div class="service-card" style="--accent-color: #C084FC;">
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(192,132,252,0.1); border: 1px solid rgba(192,132,252,0.25); display: flex; align-items: center; justify-content: center; font-size: 22px;">📱</div>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 700; color: #E8EDEA;">{{ t.services.s3Title }}</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.65; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.services.s3Desc }}</p>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #C084FC;">✓</span> {{ t.services.s3Point1 }}</div>
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #C084FC;">✓</span> {{ t.services.s3Point2 }}</div>
+              <div style="font-size: 13px; color: #C7CFCA; display: flex; align-items: center; gap: 8px;"><span style="color: #C084FC;">✓</span> {{ t.services.s3Point3 }}</div>
+            </div>
+          </div>
+          <a href="https://wa.me/5562994267179?text=Ol%C3%A1%20Victor!%20Quero%20um%20App%20Mobile%20ou%20solu%C3%A7%C3%A3o%20com%20IA." target="_blank" style="margin-top: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C084FC; text-decoration: none; font-weight: 600;" style-hover="text-decoration: underline;">Criar App ou Automação →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS DE SUCESSO & MOCKUPS REAIS -->
+  <section id="cases" style="border-top: 1px solid #1C2420; background: #0A0D0B; padding: 96px 32px;">
+    <div style="max-width: 1140px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7CF29C; font-weight: 600;">// CASOS REAIS DE PRODUÇÃO</div>
+          <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.02em;">{{ t.cases.title }}</h2>
+          <p style="margin: 0; font-size: 16px; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.cases.sub }}</p>
+        </div>
+        <a href="../index.html#projetos" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #7CF29C; text-decoration: none; border: 1px solid #28352F; border-radius: 8px; padding: 10px 18px;" style-hover="background: #16201B;">Ver portfólio completo ↗</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;" class="services-grid">
+        
+        <!-- CASE 1: DELUKAZ -->
+        <div class="glow-card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+          <div class="mockup-frame">
+            <img src="../uploads/mockup-delukaz-real.png" alt="DeLukaz Real Case Mockup" class="mockup-img">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #E2B774; text-transform: uppercase;">Música, Eventos & Vitrine Digital</div>
+            <div style="font-size: 20px; font-weight: 700; color: #E8EDEA;">DeLukaz (DLUKZ) — Showroom & Agenda</div>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #9AA7A0; font-family: 'Inter', sans-serif;">Site interativo de alta performance com player de áudio, agenda de gigs e formulário direto para contratação em eventos.</p>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <a href="https://delukaz-portfolio.vercel.app" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E2B774; text-decoration: none; font-weight: 600;">Ver Projeto Online ↗</a>
+          </div>
+        </div>
+
+        <!-- CASE 2: NLW GAME AI AGENT -->
+        <div class="glow-card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+          <div class="mockup-frame">
+            <img src="../uploads/mockup-nlw-real.png" alt="NLW Gemini AI Real Mockup" class="mockup-img">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #C084FC; text-transform: uppercase;">Inteligência Artificial Generativa</div>
+            <div style="font-size: 20px; font-weight: 700; color: #E8EDEA;">Meta Game AI Agent — Google Gemini 2.5</div>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #9AA7A0; font-family: 'Inter', sans-serif;">Assistente inteligente que processa dúvidas sobre estratégias competitivas em tempo real conectado aos modelos mais recentes de LLM.</p>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <a href="https://github.com/Vitocodando/projeto-nlw" target="_blank" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #C084FC; text-decoration: none; font-weight: 600;">Ver Repositório ↗</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESSO DE DESENVOLVIMENTO (4 PASSOS) -->
+  <section id="processo" style="max-width: 1140px; margin: 0 auto; padding: 96px 32px;">
+    <div style="display: flex; flex-direction: column; gap: 48px;">
+      
+      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7CF29C; font-weight: 600;">// METODOLOGIA & ETAPAS</div>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.02em;">{{ t.process.title }}</h2>
+        <p style="margin: 0; font-size: 16px; color: #9AA7A0; font-family: 'Inter', sans-serif;">{{ t.process.sub }}</p>
+      </div>
+
+      <div class="process-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        
+        <div style="border: 1px solid #1C2420; border-radius: 12px; padding: 24px; background: #0B0E0D; display: flex; flex-direction: column; gap: 14px;">
+          <div class="step-badge">01</div>
+          <div style="font-size: 18px; font-weight: 700; color: #E8EDEA;">{{ t.process.p1Title }}</div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #8A9891; font-family: 'Inter', sans-serif;">{{ t.process.p1Desc }}</p>
+        </div>
+
+        <div style="border: 1px solid #1C2420; border-radius: 12px; padding: 24px; background: #0B0E0D; display: flex; flex-direction: column; gap: 14px;">
+          <div class="step-badge" style="background: rgba(56,189,248,0.1); border-color: rgba(56,189,248,0.25); color: #38BDF8;">02</div>
+          <div style="font-size: 18px; font-weight: 700; color: #E8EDEA;">{{ t.process.p2Title }}</div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #8A9891; font-family: 'Inter', sans-serif;">{{ t.process.p2Desc }}</p>
+        </div>
+
+        <div style="border: 1px solid #1C2420; border-radius: 12px; padding: 24px; background: #0B0E0D; display: flex; flex-direction: column; gap: 14px;">
+          <div class="step-badge" style="background: rgba(192,132,252,0.1); border-color: rgba(192,132,252,0.25); color: #C084FC;">03</div>
+          <div style="font-size: 18px; font-weight: 700; color: #E8EDEA;">{{ t.process.p3Title }}</div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #8A9891; font-family: 'Inter', sans-serif;">{{ t.process.p3Desc }}</p>
+        </div>
+
+        <div style="border: 1px solid #1C2420; border-radius: 12px; padding: 24px; background: #0B0E0D; display: flex; flex-direction: column; gap: 14px;">
+          <div class="step-badge" style="background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.25); color: #F59E0B;">04</div>
+          <div style="font-size: 18px; font-weight: 700; color: #E8EDEA;">{{ t.process.p4Title }}</div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #8A9891; font-family: 'Inter', sans-serif;">{{ t.process.p4Desc }}</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIMULADOR & CALCULADORA INTERATIVA DE PROJETOS -->
+  <section id="simulador" style="border-top: 1px solid #1C2420; border-bottom: 1px solid #1C2420; background: #0A0E0C; padding: 96px 32px;">
+    <div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+      
+      <div style="text-align: center; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7CF29C; font-weight: 600;">// SIMULADOR INTERATIVO</div>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.02em;">{{ t.calc.title }}</h2>
+        <p style="margin: 0; font-size: 16px; color: #9AA7A0; font-family: 'Inter', sans-serif; max-width: 580px;">{{ t.calc.sub }}</p>
+      </div>
+
+      <div class="calc-grid glow-card" style="padding: 36px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: start;">
+        
+        <!-- OPÇÕES DO SIMULADOR -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          
+          <!-- Passo 1: Tipo de Projeto -->
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7CF29C; font-weight: 600;">1. QUAL O TIPO DE PROJETO?</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <button onClick="{{ setTypeLanding }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isTypeLanding ? '#7CF29C' : '#232D28' }}; background: {{ isTypeLanding ? '#16201B' : '#0B0E0D' }}; color: {{ isTypeLanding ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 14px;">
+                🚀 Landing Page
+              </button>
+              <button onClick="{{ setTypeSystem }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isTypeSystem ? '#7CF29C' : '#232D28' }}; background: {{ isTypeSystem ? '#16201B' : '#0B0E0D' }}; color: {{ isTypeSystem ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 14px;">
+                💻 Sistema / SaaS
+              </button>
+              <button onClick="{{ setTypeMobile }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isTypeMobile ? '#7CF29C' : '#232D28' }}; background: {{ isTypeMobile ? '#16201B' : '#0B0E0D' }}; color: {{ isTypeMobile ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 14px;">
+                📱 App Mobile
+              </button>
+              <button onClick="{{ setTypeAI }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isTypeAI ? '#7CF29C' : '#232D28' }}; background: {{ isTypeAI ? '#16201B' : '#0B0E0D' }}; color: {{ isTypeAI ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 14px;">
+                ⚡ Automação / IA
+              </button>
+            </div>
+          </div>
+
+          <!-- Passo 2: Urgência / Prazo -->
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7CF29C; font-weight: 600;">2. QUAL A SUA EXPECTATIVA DE PRAZO?</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <button onClick="{{ setUrgent }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isUrgent ? '#7CF29C' : '#232D28' }}; background: {{ isUrgent ? '#16201B' : '#0B0E0D' }}; color: {{ isUrgent ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 13px;">
+                ⚡ Expresso (5 a 10 dias)
+              </button>
+              <button onClick="{{ setStandard }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ !isUrgent ? '#7CF29C' : '#232D28' }}; background: {{ !isUrgent ? '#16201B' : '#0B0E0D' }}; color: {{ !isUrgent ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 13px;">
+                🗓️ Padrão (15 a 30 dias)
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESUMO DINÂMICO & CTA -->
+        <div style="background: #080B0A; border: 1px solid #233029; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1C2420; padding-bottom: 12px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7CF29C; font-weight: 600;">RESUMO DA ESTIMATIVA</div>
+            <div style="font-size: 11px; color: #5A655F; font-family: 'JetBrains Mono', monospace;">DIAGNÓSTICO GRATUITO</div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-size: 14px; color: #8A9891;">Projeto Selecionado:</div>
+            <div style="font-size: 18px; font-weight: 700; color: #E8EDEA;">{{ selectedProjectTitle }}</div>
+            <div style="font-size: 13px; color: #7CF29C; font-family: 'Inter', sans-serif;">{{ selectedProjectScope }}</div>
+          </div>
+
+          <div style="border-top: 1px solid #1C2420; padding-top: 14px; display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-size: 12px; color: #8A9891; font-family: 'Inter', sans-serif;">Inclusos na proposta:</div>
+            <div style="font-size: 13px; color: #C7CFCA;">✓ Design 100% Personalizado</div>
+            <div style="font-size: 13px; color: #C7CFCA;">✓ 30 Dias de Suporte e Garantia</div>
+            <div style="font-size: 13px; color: #C7CFCA;">✓ Código Fonte 100% Seu</div>
+          </div>
+
+          <a href="{{ whatsappSimulatorLink }}" target="_blank" class="btn-primary" style="margin-top: 8px; width: 100%;">
+            <span>Receber Proposta no WhatsApp</span>
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PERGUNTAS FREQUENTES (FAQ) -->
+  <section id="faq" style="max-width: 860px; margin: 0 auto; padding: 96px 32px;">
+    <div style="display: flex; flex-direction: column; gap: 40px;">
+      
+      <div style="text-align: center; display: flex; flex-direction: column; gap: 8px; align-items: center;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7CF29C; font-weight: 600;">// DÚVIDAS FREQUENTES</div>
+        <h2 style="margin: 0; font-size: 38px; font-weight: 800; letter-spacing: -0.02em;">{{ t.faq.title }}</h2>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        
+        <div class="faq-item">
+          <div class="faq-header" onClick="{{ toggleFaq1 }}">
+            <span>1. Quanto tempo leva para entregar uma Landing Page ou Sistema?</span>
+            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq1Open ? '−' : '+' }}</span>
+          </div>
+          <div class="faq-body" style="display: {{ faq1Open ? 'block' : 'none' }};">
+            Landing Pages de alta conversão costumam ser entregues em prazos ágeis de <strong>5 a 10 dias úteis</strong>. Sistemas web e aplicativos sob medida variam conforme o escopo (geralmente entre <strong>15 a 45 dias</strong>). Todo o cronograma é alinhado antes do início.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onClick="{{ toggleFaq2 }}">
+            <span>2. Terei custos mensais ou o código é 100% meu?</span>
+            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq2Open ? '−' : '+' }}</span>
+          </div>
+          <div class="faq-body" style="display: {{ faq2Open ? 'block' : 'none' }};">
+            <strong>O código fonte e todos os acessos são 100% seus!</strong> Não cobro mensalidades ocultas pelo desenvolvimento. Os únicos custos recorrentes são a hospedagem/domínio da sua escolha (geralmente poucos reais por mês ou planos gratuitos para início).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onClick="{{ toggleFaq3 }}">
+            <span>3. Como funciona o suporte após o lançamento?</span>
+            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq3Open ? '−' : '+' }}</span>
+          </div>
+          <div class="faq-body" style="display: {{ faq3Open ? 'block' : 'none' }};">
+            Todos os projetos acompanham <strong>30 dias de garantia e suporte técnico completo</strong> para tirar dúvidas, ajustar detalhes e garantir que tudo opere com estabilidade máxima.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onClick="{{ toggleFaq4 }}">
+            <span>4. Quais são as formas de pagamento aceitas?</span>
+            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq4Open ? '−' : '+' }}</span>
+          </div>
+          <div class="faq-body" style="display: {{ faq4Open ? 'block' : 'none' }};">
+            Aceito PIX (com desconto especial à vista) e parcelamento no cartão de crédito em até 12x, com emissão de contrato claro e transparente para ambas as partes.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CALL TO ACTION -->
+  <section style="border-top: 1px solid #1C2420; background: linear-gradient(180deg, #0A0E0C 0%, #060807 100%); padding: 100px 32px 110px;">
+    <div style="max-width: 780px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 28px; align-items: center;">
+      
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7CF29C; font-weight: 600; background: rgba(124,242,156,0.08); border: 1px solid rgba(124,242,156,0.25); border-radius: 999px; padding: 6px 18px;">
+        VAMOS TRANSFORMAR SEU PROJETO EM REALIDADE?
+      </div>
+
+      <h2 style="margin: 0; font-size: 48px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">
+        Pronto para elevar o padrão digital da sua empresa?
+      </h2>
+
+      <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #9AA7A0; font-family: 'Inter', sans-serif;">
+        Converse diretamente comigo pelo WhatsApp. Sem burocracia, com orçamento rápido e atendimento personalizado.
+      </p>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px;">
+        <a href="https://wa.me/5562994267179?text=Ol%C3%A1%20Victor!%20Gostaria%20de%20iniciar%20meu%20projeto." target="_blank" class="btn-primary" style="font-size: 18px; padding: 18px 36px;">
+          <span>Iniciar Conversa no WhatsApp</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <div style="display: flex; gap: 24px; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8A9891;">
+        <a href="mailto:arthurvictor552@gmail.com" style="color: #8A9891; text-decoration: none;" style-hover="color: #7CF29C;">arthurvictor552@gmail.com ↗</a>
+        <a href="../index.html" style="color: #8A9891; text-decoration: none;" style-hover="color: #7CF29C;">Ver Currículo & Bio ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid #1C2420; background: #050706; padding: 28px 32px;">
+    <div style="max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A655F;">
+      <div>© 2026 Victor Arthur · Engenharia de Software</div>
+      <div>Goiânia – GO · Atendimento para todo o Brasil e Exterior</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;: {&quot;editor&quot;: &quot;string&quot;, &quot;default&quot;: &quot;pt&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+class Component extends DCLogic {
+  state = {
+    lang: 'pt',
+    projectType: 'landing',
+    isUrgent: false,
+    faq1Open: true,
+    faq2Open: false,
+    faq3Open: false,
+    faq4Open: false
+  };
+
+  dict() {
+    return {
+      pt: {
+        nav: { services: 'Serviços', cases: 'Cases Reais', process: 'Como Funciona', calc: 'Simulador', faq: 'FAQ', cta: 'Falar no WhatsApp' },
+        hero: {
+          badge: 'DESENVOLVIMENTO DE SOFTWARE & WEBSITES',
+          h1Part1: 'Transforme visitantes em clientes com',
+          h1Highlight: 'Landing Pages & Sistemas Web',
+          h1Part2: 'de alta performance.',
+          desc: 'Desenvolvo soluções digitais sob medida: páginas ultra rápidas, sistemas escaláveis com Node.js e React 19, aplicativos e integrações com Inteligência Artificial para alavancar seu negócio.',
+          primaryCta: 'Solicitar Orçamento Grátis',
+          secondaryCta: 'Simular Projeto',
+          proof1: 'Performance 95+ no PageSpeed',
+          proof2: 'Código 100% seu sem mensalidades',
+          proof3: '30 Dias de Suporte e Garantia',
+          mockupNote: 'Plataforma SaaS multi-tenant completa com painel web, segurança bancária e app mobile.'
+        },
+        stats: {
+          speed: 'Tempo de carregamento ultrarrápido',
+          responsive: 'Responsivo em celulares, tablets e computadores',
+          security: 'Padrão de segurança com criptografia de ponta',
+          support: 'Garantia e suporte total pós-lançamento'
+        },
+        services: {
+          title: 'Soluções desenvolvidas sob medida para o seu objetivo',
+          sub: 'Do design persuasivo ao banco de dados seguro: tudo projetado para gerar credibilidade e aumentar suas conversões.',
+          s1Title: 'Landing Pages de Alta Conversão',
+          s1Desc: 'Páginas comerciais focadas em captação de leads e vendas, com copywriting estratégico, tracking de pixels e carregamento instantâneo.',
+          s1Point1: 'Design exclusivo alinhado à sua marca',
+          s1Point2: 'Integração direta com WhatsApp e CRM',
+          s1Point3: 'Otimização avançada de SEO e Analytics',
+          s2Title: 'Sistemas Web & SaaS Sob Medida',
+          s2Desc: 'Painéis administrativos, plataformas multi-tenant, gestão financeira e fluxos operacionais completos com React 19, Node.js e PostgreSQL.',
+          s2Point1: 'Autenticação segura com 2FA e JWT',
+          s2Point2: 'Isolamento de dados por cliente (RLS)',
+          s2Point3: 'Banco de dados escalável e relatórios',
+          s3Title: 'Aplicativos Mobile & Inteligência Artificial',
+          s3Desc: 'Apps nativos para iOS e Android com React Native/Expo e integração de agentes inteligentes com a API do Google Gemini para automação.',
+          s3Point1: 'Notificações push e suporte a câmera/QR',
+          s3Point2: 'Agentes inteligentes com Google Gemini',
+          s3Point3: 'Publicação e deploy contínuo'
+        },
+        cases: {
+          title: 'Cases e Projetos Construídos com Excelência',
+          sub: 'Veja alguns dos produtos digitais reais desenvolvidos para clientes e em operação contínua.'
+        },
+        process: {
+          title: 'Como funciona o processo de criação',
+          sub: 'Uma metodologia ágil, transparente e sem surpresas do início ao fim.',
+          p1Title: '1. Diagnóstico & Escopo',
+          p1Desc: 'Entendimento profundo do seu nicho, objetivos comerciais e definição clara das funcionalidades necessárias.',
+          p2Title: '2. Design & Estrutura',
+          p2Desc: 'Criação visual moderna, pensada na experiência do usuário (UX) e gatilhos de conversão.',
+          p3Title: '3. Desenvolvimento & Testes',
+          p3Desc: 'Programação limpa, segura, responsiva e com alta performance de carregamento.',
+          p4Title: '4. Entrega & Treinamento',
+          p4Desc: 'Deploy em produção, configuração de domínio e 30 dias de suporte total garantido.'
+        },
+        calc: {
+          title: 'Simule seu Projeto em Segundos',
+          sub: 'Selecione as opções abaixo para receber uma estimativa inicial e atendimento imediato.'
+        },
+        faq: { title: 'Perguntas Frequentes' }
+      },
+      en: {
+        nav: { services: 'Services', cases: 'Real Cases', process: 'Process', calc: 'Estimator', faq: 'FAQ', cta: 'Chat on WhatsApp' },
+        hero: {
+          badge: 'CUSTOM SOFTWARE & WEB DEVELOPMENT',
+          h1Part1: 'Turn visitors into clients with',
+          h1Highlight: 'High-Performance Web Apps',
+          h1Part2: 'and Landing Pages.',
+          desc: 'I build custom digital solutions: ultra-fast landing pages, scalable fullstack systems with Node.js and React 19, mobile apps and GenAI integrations to scale your business.',
+          primaryCta: 'Get a Free Quote',
+          secondaryCta: 'Project Estimator',
+          proof1: '95+ Score on Google PageSpeed',
+          proof2: '100% Code Ownership (No Hidden Fees)',
+          proof3: '30-Day Full Support & Warranty',
+          mockupNote: 'Full multi-tenant SaaS platform with web SPA, bank-grade security and mobile app.'
+        },
+        stats: {
+          speed: 'Ultra-fast loading speed for higher conversion',
+          responsive: 'Flawless on smartphones, tablets & desktop',
+          security: 'Enterprise security standard with encryption',
+          support: 'Full warranty & post-launch support'
+        },
+        services: {
+          title: 'Tailored digital solutions built for your goals',
+          sub: 'From persuasive design to secure databases: everything engineered for maximum credibility and conversion.',
+          s1Title: 'High-Converting Landing Pages',
+          s1Desc: 'Sales and lead-generation pages engineered with strategic copywriting, pixel tracking and instant load times.',
+          s1Point1: 'Custom UI aligned with your brand identity',
+          s1Point2: 'Direct integration with WhatsApp & CRM',
+          s1Point3: 'Advanced SEO and Google Analytics tracking',
+          s2Title: 'Custom Web Apps & SaaS Systems',
+          s2Desc: 'Admin dashboards, multi-tenant architectures, cash flow managers and automated workflows using React 19, Node.js & PostgreSQL.',
+          s2Point1: 'Enterprise Auth with 2FA TOTP and JWT',
+          s2Point2: 'Strict Row Level Security (RLS) data isolation',
+          s2Point3: 'Scalable cloud database & analytics',
+          s3Title: 'Mobile Apps & AI Automations',
+          s3Desc: 'Native iOS & Android apps with React Native/Expo and intelligent AI agents powered by Google Gemini API.',
+          s3Point1: 'Push notifications & camera/QR integration',
+          s3Point2: 'Smart AI assistants with Google Gemini',
+          s3Point3: 'App Store / Play Store automated deploy'
+        },
+        cases: {
+          title: 'Real Production Cases & Projects',
+          sub: 'Explore live digital products engineered with clean code and high performance.'
+        },
+        process: {
+          title: 'How the development process works',
+          sub: 'An agile, transparent workflow from kickoff to launch.',
+          p1Title: '1. Discovery & Scope',
+          p1Desc: 'Deep dive into your market, business goals and exact technical specifications.',
+          p2Title: '2. UI/UX Design',
+          p2Desc: 'Modern visual design engineered for user engagement and conversion psychology.',
+          p3Title: '3. Engineering & Security',
+          p3Desc: 'Clean, modular, high-speed coding with full responsiveness and security checks.',
+          p4Title: '4. Launch & 30-day Support',
+          p4Desc: 'Production deployment, domain configuration and 30 days of full warranty.'
+        },
+        calc: {
+          title: 'Project Estimator',
+          sub: 'Select your options below to get an instant scope summary and direct WhatsApp quote.'
+        },
+        faq: { title: 'Frequently Asked Questions' }
+      }
+    };
+  }
+
+  renderVals() {
+    const lang = this.state.lang;
+    const t = this.dict()[lang];
+    const pt = this.state.projectType;
+    const isUrgent = this.state.isUrgent;
+
+    let projectTitle = 'Landing Page de Alta Conversão';
+    let projectScope = 'Página única focada em vendas, leads, analytics e carregamento instantâneo.';
+    let waType = 'Landing Page de Alta Conversão';
+
+    if (pt === 'system') {
+      projectTitle = 'Sistema Web / SaaS Sob Medida';
+      projectScope = 'Plataforma completa com painel administrativo, banco de dados e autenticação.';
+      waType = 'Sistema Web ou SaaS';
+    } else if (pt === 'mobile') {
+      projectTitle = 'Aplicativo Mobile (iOS & Android)';
+      projectScope = 'App nativo desenvolvido com React Native / Expo e publicação nas lojas.';
+      waType = 'Aplicativo Mobile';
+    } else if (pt === 'ai') {
+      projectTitle = 'Automação & Integração com IA';
+      projectScope = 'Assistente inteligente com Google Gemini, chatbot WhatsApp ou automações de processos.';
+      waType = 'Automação / Inteligência Artificial';
+    }
+
+    const prazo = isUrgent ? 'Urgente (5 a 10 dias)' : 'Padrão (15 a 30 dias)';
+    const waText = encodeURIComponent(`Olá Victor! Simulei meu projeto na sua Landing Page:\n- Tipo: ${waType}\n- Prazo desejado: ${prazo}\nGostaria de receber uma proposta comercial detalhada!`);
+    const waLink = `https://wa.me/5562994267179?text=${waText}`;
+
+    return {
+      t,
+      langButton: lang === 'pt' ? 'EN' : 'PT',
+      toggleLang: () => {
+        this.setState({ lang: lang === 'pt' ? 'en' : 'pt' });
+      },
+      isTypeLanding: pt === 'landing',
+      isTypeSystem: pt === 'system',
+      isTypeMobile: pt === 'mobile',
+      isTypeAI: pt === 'ai',
+      isUrgent: isUrgent,
+      setTypeLanding: () => this.setState({ projectType: 'landing' }),
+      setTypeSystem: () => this.setState({ projectType: 'system' }),
+      setTypeMobile: () => this.setState({ projectType: 'mobile' }),
+      setTypeAI: () => this.setState({ projectType: 'ai' }),
+      setUrgent: () => this.setState({ isUrgent: true }),
+      setStandard: () => this.setState({ isUrgent: false }),
+      selectedProjectTitle: projectTitle,
+      selectedProjectScope: projectScope,
+      whatsappSimulatorLink: waLink,
+      faq1Open: this.state.faq1Open,
+      faq2Open: this.state.faq2Open,
+      faq3Open: this.state.faq3Open,
+      faq4Open: this.state.faq4Open,
+      toggleFaq1: () => this.setState({ faq1Open: !this.state.faq1Open }),
+      toggleFaq2: () => this.setState({ faq2Open: !this.state.faq2Open }),
+      toggleFaq3: () => this.setState({ faq3Open: !this.state.faq3Open }),
+      toggleFaq4: () => this.setState({ faq4Open: !this.state.faq4Open })
+    };
+  }
+}
+</script>
+</body>
+</html>
