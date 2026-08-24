@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { margin: 0; background: #0B0E0D; color: #E8EDEA; font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
     ::selection { background: #1C2B23; color: #7CF29C; }
@@ -363,16 +364,16 @@
           <div style="display: flex; flex-direction: column; gap: 8px;">
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7CF29C; font-weight: 600;">1. QUAL O TIPO DE PROJETO?</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-              <button onClick="{{ setTypeLanding }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isTypeLanding ? '#7CF29C' : '#1F2624' }}; background: {{ isTypeLanding ? '#121815' : '#0D110F' }}; color: {{ isTypeLanding ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 14px;">
+              <button onClick="{{ setTypeLanding }}" style="{{ btnLandingStyle }}">
                 🚀 Landing Page
               </button>
-              <button onClick="{{ setTypeSystem }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isTypeSystem ? '#7CF29C' : '#1F2624' }}; background: {{ isTypeSystem ? '#121815' : '#0D110F' }}; color: {{ isTypeSystem ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 14px;">
+              <button onClick="{{ setTypeSystem }}" style="{{ btnSystemStyle }}">
                 💻 Sistema / SaaS
               </button>
-              <button onClick="{{ setTypeMobile }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isTypeMobile ? '#7CF29C' : '#1F2624' }}; background: {{ isTypeMobile ? '#121815' : '#0D110F' }}; color: {{ isTypeMobile ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 14px;">
+              <button onClick="{{ setTypeMobile }}" style="{{ btnMobileStyle }}">
                 📱 App Mobile
               </button>
-              <button onClick="{{ setTypeAI }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isTypeAI ? '#7CF29C' : '#1F2624' }}; background: {{ isTypeAI ? '#121815' : '#0D110F' }}; color: {{ isTypeAI ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 14px;">
+              <button onClick="{{ setTypeAI }}" style="{{ btnAiStyle }}">
                 ⚡ Automação / IA
               </button>
             </div>
@@ -382,10 +383,10 @@
           <div style="display: flex; flex-direction: column; gap: 8px;">
             <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7CF29C; font-weight: 600;">2. QUAL A SUA EXPECTATIVA DE PRAZO?</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-              <button onClick="{{ setUrgent }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ isUrgent ? '#7CF29C' : '#1F2624' }}; background: {{ isUrgent ? '#121815' : '#0D110F' }}; color: {{ isUrgent ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 13px;">
+              <button onClick="{{ setUrgent }}" style="{{ btnUrgentStyle }}">
                 ⚡ Expresso (5 a 10 dias)
               </button>
-              <button onClick="{{ setStandard }}" style="padding: 12px; border-radius: 8px; border: 1px solid {{ !isUrgent ? '#7CF29C' : '#1F2624' }}; background: {{ !isUrgent ? '#121815' : '#0D110F' }}; color: {{ !isUrgent ? '#7CF29C' : '#C7CFCA' }}; font-weight: 600; cursor: pointer; text-align: left; font-size: 13px;">
+              <button onClick="{{ setStandard }}" style="{{ btnStandardStyle }}">
                 🗓️ Padrão (15 a 30 dias)
               </button>
             </div>
@@ -413,7 +414,7 @@
             <div style="font-size: 13px; color: #C7CFCA;">✓ Código Fonte 100% Seu</div>
           </div>
 
-          <a href="{{ whatsappSimulatorLink }}" target="_blank" class="btn-primary" style="margin-top: 6px; width: 100%;">
+          <a href="{{ whatsappSimulatorLink }}" target="_blank" class="btn-primary" style="margin-top: 6px; width: 100%; box-sizing: border-box; text-align: center; justify-content: center;">
             <span>Receber Proposta no WhatsApp</span>
             <span>→</span>
           </a>
@@ -438,9 +439,9 @@
         <div class="faq-item">
           <div class="faq-header" onClick="{{ toggleFaq1 }}">
             <span>1. Quanto tempo leva para entregar uma Landing Page ou Sistema?</span>
-            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq1Open ? '−' : '+' }}</span>
+            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq1Icon }}</span>
           </div>
-          <div class="faq-body" style="display: {{ faq1Open ? 'block' : 'none' }};">
+          <div class="faq-body" style="display: {{ faq1Display }};">
             Landing Pages de alta conversão costumam ser entregues em prazos ágeis de <strong>5 a 10 dias úteis</strong>. Sistemas web e aplicativos sob medida variam conforme o escopo (geralmente entre <strong>15 a 45 dias</strong>). Todo o cronograma é alinhado antes do início.
           </div>
         </div>
@@ -448,9 +449,9 @@
         <div class="faq-item">
           <div class="faq-header" onClick="{{ toggleFaq2 }}">
             <span>2. Terei custos mensais ou o código é 100% meu?</span>
-            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq2Open ? '−' : '+' }}</span>
+            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq2Icon }}</span>
           </div>
-          <div class="faq-body" style="display: {{ faq2Open ? 'block' : 'none' }};">
+          <div class="faq-body" style="display: {{ faq2Display }};">
             <strong>O código fonte e todos os acessos são 100% seus!</strong> Não cobro mensalidades ocultas pelo desenvolvimento. Os únicos custos recorrentes são a hospedagem/domínio da sua escolha (geralmente poucos reais por mês ou planos gratuitos para início).
           </div>
         </div>
@@ -458,9 +459,9 @@
         <div class="faq-item">
           <div class="faq-header" onClick="{{ toggleFaq3 }}">
             <span>3. Como funciona o suporte após o lançamento?</span>
-            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq3Open ? '−' : '+' }}</span>
+            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq3Icon }}</span>
           </div>
-          <div class="faq-body" style="display: {{ faq3Open ? 'block' : 'none' }};">
+          <div class="faq-body" style="display: {{ faq3Display }};">
             Todos os projetos acompanham <strong>30 dias de garantia e suporte técnico completo</strong> para tirar dúvidas, ajustar detalhes e garantir que tudo opere com estabilidade máxima.
           </div>
         </div>
@@ -468,9 +469,9 @@
         <div class="faq-item">
           <div class="faq-header" onClick="{{ toggleFaq4 }}">
             <span>4. Quais são as formas de pagamento aceitas?</span>
-            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq4Open ? '−' : '+' }}</span>
+            <span style="color: #7CF29C; font-family: 'JetBrains Mono', monospace;">{{ faq4Icon }}</span>
           </div>
-          <div class="faq-body" style="display: {{ faq4Open ? 'block' : 'none' }};">
+          <div class="faq-body" style="display: {{ faq4Display }};">
             Aceito PIX (com desconto especial à vista) e parcelamento no cartão de crédito em até 12x, com emissão de contrato claro e transparente para ambas as partes.
           </div>
         </div>
@@ -686,9 +687,41 @@ class Component extends DCLogic {
       waType = 'Automação / Inteligência Artificial';
     }
 
-    const prazo = isUrgent ? 'Urgente (5 a 10 dias)' : 'Padrão (15 a 30 dias)';
-    const waText = encodeURIComponent(`Olá Victor! Simulei meu projeto na sua Landing Page:\n- Tipo: ${waType}\n- Prazo desejado: ${prazo}\nGostaria de receber uma proposta comercial detalhada!`);
+    if (lang === 'en') {
+      if (pt === 'landing') {
+        projectTitle = 'High-Converting Landing Page';
+        projectScope = 'Single page focused on sales, leads, analytics and instant load speed.';
+        waType = 'High-Converting Landing Page';
+      } else if (pt === 'system') {
+        projectTitle = 'Custom Web App / SaaS';
+        projectScope = 'Full platform with admin dashboard, database and authentication.';
+        waType = 'Custom Web App / SaaS';
+      } else if (pt === 'mobile') {
+        projectTitle = 'Mobile App (iOS & Android)';
+        projectScope = 'Native app built with React Native / Expo and store publishing.';
+        waType = 'Mobile App';
+      } else if (pt === 'ai') {
+        projectTitle = 'AI Automation & Integration';
+        projectScope = 'Intelligent assistant with Google Gemini, WhatsApp bot or workflow automation.';
+        waType = 'AI Automation';
+      }
+    }
+
+    const prazo = isUrgent
+      ? (lang === 'en' ? 'Express (5 to 10 days)' : 'Urgente (5 a 10 dias)')
+      : (lang === 'en' ? 'Standard (15 to 30 days)' : 'Padrão (15 a 30 dias)');
+
+    const waMsg = lang === 'en'
+      ? `Hello Victor! I configured my project on your Landing Page:\n- Type: ${waType}\n- Delivery expectation: ${prazo}\nI'd like to receive a detailed quote!`
+      : `Olá Victor! Simulei meu projeto na sua Landing Page:\n- Tipo: ${waType}\n- Prazo desejado: ${prazo}\nGostaria de receber uma proposta comercial detalhada!`;
+
+    const waText = encodeURIComponent(waMsg);
     const waLink = `https://wa.me/5562994267179?text=${waText}`;
+
+    const getBtnStyle = (active, isUrgentBtn = false) => {
+      const fontSize = isUrgentBtn ? '13px' : '14px';
+      return `padding: 12px 14px; border-radius: 8px; border: 1px solid ${active ? '#7CF29C' : '#1F2624'}; background: ${active ? '#121815' : '#0D110F'}; color: ${active ? '#7CF29C' : '#C7CFCA'}; font-weight: 600; cursor: pointer; text-align: left; font-size: ${fontSize}; transition: all 0.2s ease; box-sizing: border-box; width: 100%;`;
+    };
 
     return {
       t,
@@ -696,11 +729,12 @@ class Component extends DCLogic {
       toggleLang: () => {
         this.setState({ lang: lang === 'pt' ? 'en' : 'pt' });
       },
-      isTypeLanding: pt === 'landing',
-      isTypeSystem: pt === 'system',
-      isTypeMobile: pt === 'mobile',
-      isTypeAI: pt === 'ai',
-      isUrgent: isUrgent,
+      btnLandingStyle: getBtnStyle(pt === 'landing'),
+      btnSystemStyle: getBtnStyle(pt === 'system'),
+      btnMobileStyle: getBtnStyle(pt === 'mobile'),
+      btnAiStyle: getBtnStyle(pt === 'ai'),
+      btnUrgentStyle: getBtnStyle(isUrgent, true),
+      btnStandardStyle: getBtnStyle(!isUrgent, true),
       setTypeLanding: () => this.setState({ projectType: 'landing' }),
       setTypeSystem: () => this.setState({ projectType: 'system' }),
       setTypeMobile: () => this.setState({ projectType: 'mobile' }),
@@ -710,10 +744,14 @@ class Component extends DCLogic {
       selectedProjectTitle: projectTitle,
       selectedProjectScope: projectScope,
       whatsappSimulatorLink: waLink,
-      faq1Open: this.state.faq1Open,
-      faq2Open: this.state.faq2Open,
-      faq3Open: this.state.faq3Open,
-      faq4Open: this.state.faq4Open,
+      faq1Icon: this.state.faq1Open ? '−' : '+',
+      faq1Display: this.state.faq1Open ? 'block' : 'none',
+      faq2Icon: this.state.faq2Open ? '−' : '+',
+      faq2Display: this.state.faq2Open ? 'block' : 'none',
+      faq3Icon: this.state.faq3Open ? '−' : '+',
+      faq3Display: this.state.faq3Open ? 'block' : 'none',
+      faq4Icon: this.state.faq4Open ? '−' : '+',
+      faq4Display: this.state.faq4Open ? 'block' : 'none',
       toggleFaq1: () => this.setState({ faq1Open: !this.state.faq1Open }),
       toggleFaq2: () => this.setState({ faq2Open: !this.state.faq2Open }),
       toggleFaq3: () => this.setState({ faq3Open: !this.state.faq3Open }),
