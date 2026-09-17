@@ -306,6 +306,36 @@ export const PortfolioPage: React.FC = () => {
                   repoUrl="https://github.com/Vitocodando/portifolioFaculdade"
                 />
               </ScrollReveal>
+
+              {/* Milis GR Fotografia */}
+              <ScrollReveal variant="fade-up" delay={100}>
+                <ProjectCard
+                  type={t.milis.type}
+                  title={t.milis.title}
+                  description={t.milis.desc}
+                  stack={data.milisStack}
+                  badge="Live Site"
+                  tagColor="var(--accent-gold)"
+                  liveUrl="https://milisgr.vercel.app"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-gold)"
+                />
+              </ScrollReveal>
+
+              {/* OBR - Os Brabo da Rua */}
+              <ScrollReveal variant="fade-up" delay={200}>
+                <ProjectCard
+                  type={t.obr.type}
+                  title={t.obr.title}
+                  description={t.obr.desc}
+                  stack={data.obrStack}
+                  badge="Live Site"
+                  tagColor="var(--accent-purple)"
+                  liveUrl="https://obr-psi.vercel.app"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-purple)"
+                />
+              </ScrollReveal>
             </div>
           </div>
 

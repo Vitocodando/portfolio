@@ -66,6 +66,22 @@ export const getPortfolioData = (lang: Language) => {
     'Lógica & Algoritmos',
   ];
 
+  const milisStack = [
+    'JavaScript ES6+',
+    'HTML5 Semântico',
+    'CSS3 Moderno',
+    'Galeria de Fotos Responsiva',
+    'Vercel Deploy',
+  ];
+
+  const obrStack = [
+    'Next.js',
+    'TypeScript',
+    'Supabase Storage',
+    'Tailwind CSS',
+    'Vercel Deploy',
+  ];
+
   const feats: ArchitectureFeature[] = isEn
     ? [
         {
@@ -280,6 +296,8 @@ export const getPortfolioData = (lang: Language) => {
     nlwStack,
     wpShieldStack,
     academicStack,
+    milisStack,
+    obrStack,
     feats,
     jobs,
     skills,

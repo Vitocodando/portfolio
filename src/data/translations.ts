@@ -75,6 +75,16 @@ export const translations = {
       type: 'Projeto Acadêmico & Fundamentos',
       desc: 'Projeto e base acadêmica demonstrando fundamentos de computação, estruturas de dados, algoritmos e desenvolvimento web moderno durante a graduação em Engenharia de Software na UNIALFA.'
     },
+    milis: {
+      title: 'Milis GR Fotografia',
+      type: 'Web Application · Portfólio de Fotografia',
+      desc: 'Site institucional e portfólio digital para a fotógrafa Milis GR, com galeria de trabalhos e canal direto de contato para orçamentos e ensaios.'
+    },
+    obr: {
+      title: 'OBR — Os Brabo da Rua',
+      type: 'Web Application · Portfólio de Arte Urbana',
+      desc: 'Plataforma para o coletivo de arte urbana OBR, ativo desde 2013, com galeria de murais e trabalhos da crew, loja de produtos e integração com redes sociais.'
+    },
     stack: { label: 'STACK & HABILIDADES' },
     exp: { label: 'EXPERIÊNCIA' },
     edu: {
@@ -231,6 +241,16 @@ export const translations = {
       title: 'Software Engineering (UNIALFA)',
       type: 'Academic Project & Foundations',
       desc: 'Academic project and showcase demonstrating computer science fundamentals, data structures, algorithms and modern web development during the B.Sc. in Software Engineering at UNIALFA.'
+    },
+    milis: {
+      title: 'Milis GR Photography',
+      type: 'Web Application · Photography Portfolio',
+      desc: 'Institutional site and digital portfolio for photographer Milis GR, featuring a work gallery and a direct contact channel for bookings and quotes.'
+    },
+    obr: {
+      title: 'OBR — Os Brabo da Rua',
+      type: 'Web Application · Street Art Portfolio',
+      desc: 'Platform for the OBR street art collective, active since 2013, featuring a gallery of murals and crew work, a merch store and social media integration.'
     },
     stack: { label: 'STACK & SKILLS' },
     exp: { label: 'EXPERIENCE' },
