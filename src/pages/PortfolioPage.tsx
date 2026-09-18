@@ -186,39 +186,6 @@ export const PortfolioPage: React.FC = () => {
                 />
               </ScrollReveal>
 
-              {/* NLW Game AI Agent */}
-              <ScrollReveal variant="fade-up" delay={200}>
-                <ProjectCard
-                  type={t.nlw.type}
-                  title={t.nlw.title}
-                  description={t.nlw.desc}
-                  stack={data.nlwStack}
-                  mockupImg="/uploads/mockup-nlw-real.webp"
-                  mockupAlt="NLW Game Meta AI Agent Mockup"
-                  bgColor="#07060D"
-                  tagColor="var(--accent-purple)"
-                  liveUrl="https://github.com/Vitocodando/projeto-nlw"
-                  liveLabel="GitHub Repo ↗"
-                  liveBtnColor="var(--accent-purple)"
-                />
-              </ScrollReveal>
-
-              {/* WP Admin Shield */}
-              <ScrollReveal variant="fade-up" delay={100}>
-                <ProjectCard
-                  type={t.wpShield.type}
-                  title={t.wpShield.title}
-                  description={t.wpShield.desc}
-                  stack={data.wpShieldStack}
-                  mockupImg="/uploads/mockup-wpshield.svg"
-                  mockupAlt="WordPress Admin Security Shield Mockup"
-                  bgColor="#0B0F0D"
-                  badge="Security Hardening"
-                  tagColor="var(--accent-green)"
-                  repoUrl="https://github.com/Vitocodando/wordpress-admin-block"
-                />
-              </ScrollReveal>
-
               {/* Milis GR Fotografia */}
               <ScrollReveal variant="fade-up" delay={100}>
                 <ProjectCard
@@ -262,7 +229,7 @@ export const PortfolioPage: React.FC = () => {
                   stack={data.jvfitStack}
                   mockupImg="/uploads/mockup-jvfit-real.webp"
                   mockupAlt="JVfit Mockup"
-                  bgColor="#F9FAF6"
+                  bgColor="#10151A"
                   tagColor="var(--accent-blue)"
                   liveUrl="https://jvfit.lestary.com.br"
                   liveLabel="Live Demo ↗"
@@ -279,11 +246,44 @@ export const PortfolioPage: React.FC = () => {
                   stack={data.lestaryStack}
                   mockupImg="/uploads/mockup-lestary-real.webp"
                   mockupAlt="Lestary Mockup"
-                  bgColor="#F4F6F8"
+                  bgColor="#0B0D12"
                   tagColor="var(--accent-amber)"
                   liveUrl="https://lestary.com.br"
                   liveLabel="Live Demo ↗"
                   liveBtnColor="var(--accent-amber)"
+                />
+              </ScrollReveal>
+
+              {/* NLW Game AI Agent */}
+              <ScrollReveal variant="fade-up" delay={100}>
+                <ProjectCard
+                  type={t.nlw.type}
+                  title={t.nlw.title}
+                  description={t.nlw.desc}
+                  stack={data.nlwStack}
+                  mockupImg="/uploads/mockup-nlw-real.webp"
+                  mockupAlt="NLW Game Meta AI Agent Mockup"
+                  bgColor="#07060D"
+                  tagColor="var(--accent-purple)"
+                  liveUrl="https://github.com/Vitocodando/projeto-nlw"
+                  liveLabel="GitHub Repo ↗"
+                  liveBtnColor="var(--accent-purple)"
+                />
+              </ScrollReveal>
+
+              {/* WP Admin Shield */}
+              <ScrollReveal variant="fade-up" delay={200}>
+                <ProjectCard
+                  type={t.wpShield.type}
+                  title={t.wpShield.title}
+                  description={t.wpShield.desc}
+                  stack={data.wpShieldStack}
+                  mockupImg="/uploads/mockup-wpshield.svg"
+                  mockupAlt="WordPress Admin Security Shield Mockup"
+                  bgColor="#0B0F0D"
+                  badge="Security Hardening"
+                  tagColor="var(--accent-green)"
+                  repoUrl="https://github.com/Vitocodando/wordpress-admin-block"
                 />
               </ScrollReveal>
             </div>
