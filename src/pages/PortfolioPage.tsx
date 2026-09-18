@@ -2,7 +2,6 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { getPortfolioData } from '../data/portfolioData';
 import { TerminalCard } from '../components/TerminalCard';
-import { ArchitectureCard } from '../components/ArchitectureCard';
 import { ProjectCard } from '../components/ProjectCard';
 import { FloatingWhatsApp } from '../components/FloatingWhatsApp';
 import { TypewriterText } from '../components/TypewriterText';
@@ -17,13 +16,13 @@ export const PortfolioPage: React.FC = () => {
       ? [
           'Fullstack · React & Node.js',
           'Software Engineer · UNIALFA',
-          'SaaS Architect · Razorfy (Live)',
+          'SaaS Systems Architect',
           'TypeScript, Cloud & REST APIs',
         ]
       : [
           'Fullstack · React & Node.js',
           'Engenheiro de Software · UNIALFA',
-          'Arquiteto SaaS · Razorfy (Online)',
+          'Arquiteto de Sistemas SaaS',
           'TypeScript, Cloud & APIs REST',
         ];
 
@@ -143,110 +142,33 @@ export const PortfolioPage: React.FC = () => {
       <section id="projetos" style={{ borderBottom: '1px solid var(--border-subtle)', background: 'var(--bg-card)', position: 'relative', zIndex: 1 }}>
         <div className="container" style={{ padding: '80px 32px', display: 'flex', flexDirection: 'column', gap: '48px' }}>
           <ScrollReveal variant="fade-up">
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', color: 'var(--accent-green)', fontWeight: 600 }}>
-              // 02 — {t.project.label}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', color: 'var(--accent-green)', fontWeight: 600 }}>
+                // 02 — {t.project.label}
+              </div>
+              <div style={{ fontSize: '15px', color: 'var(--text-dim)' }}>{t.project.desc}</div>
             </div>
           </ScrollReveal>
 
-          {/* PROJETO PRINCIPAL (RAZORFY) */}
-          <div className="project-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }}>
-            <ScrollReveal variant="fade-right" delay={100}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                <h2 className="project-title" style={{ margin: 0, fontSize: '44px', fontWeight: 700, letterSpacing: '-0.02em' }}>
-                  Razorfy
-                </h2>
-                <div style={{ fontSize: '18px', fontWeight: 500, color: 'var(--accent-green)' }}>
-                  {t.project.tagline}
-                </div>
-                <p style={{ margin: 0, fontSize: '16px', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
-                  {t.project.desc}
-                </p>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '4px' }}>
-                  {data.razorfyStack.map((chip, idx) => (
-                    <span
-                      key={idx}
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '12px',
-                        color: 'var(--text-secondary)',
-                        border: '1px solid var(--border-muted)',
-                        background: 'var(--bg-main)',
-                        borderRadius: '999px',
-                        padding: '5px 12px',
-                      }}
-                    >
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-
-                <div style={{ display: 'flex', gap: '14px', marginTop: '8px', flexWrap: 'wrap' }}>
-                  <a
-                    href="https://razorfy.online"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-primary"
-                    style={{ padding: '11px 20px', fontSize: '14px' }}
-                  >
-                    razorfy.online ↗
-                  </a>
-                  <a
-                    href="https://github.com/Vitocodando/Razorfy"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-secondary"
-                    style={{ padding: '11px 18px', fontSize: '13px' }}
-                  >
-                    {t.project.code} ↗
-                  </a>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* MOCKUP REAL RAZORFY */}
-            <ScrollReveal variant="fade-left" delay={150}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <div
-                  style={{
-                    position: 'relative',
-                    border: '1px solid #25332C',
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    background: '#080B0A',
-                    boxShadow: '0 16px 36px rgba(0,0,0,0.6)',
-                  }}
-                >
-                  <img src="/uploads/mockup-razorfy-real.png" alt="Razorfy Real Mockup" className="mockup-img" />
-                </div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-faint)' }}>
-                  {t.project.shotCaption}
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* ARQUITETURA RAZORFY CARDS */}
-          <div className="feats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
-            {data.feats.map((feature, idx) => (
-              <ScrollReveal key={idx} variant="fade-up" delay={idx * 75}>
-                <ArchitectureCard feature={feature} />
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* OUTROS PROJETOS DO GITHUB */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginTop: '20px' }}>
-            <ScrollReveal variant="fade-up">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', color: 'var(--accent-green)' }}>
-                  // {t.project.otherLabel}
-                </div>
-                <div style={{ fontSize: '15px', color: 'var(--text-dim)' }}>{t.project.otherDesc}</div>
-              </div>
-            </ScrollReveal>
-
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div className="other-projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+              {/* Razorfy */}
+              <ScrollReveal variant="fade-up" delay={100}>
+                <ProjectCard
+                  type={t.razorfy.type}
+                  title={t.razorfy.title}
+                  description={t.razorfy.desc}
+                  stack={data.razorfyStack}
+                  mockupImg="/uploads/mockup-razorfy-real.png"
+                  mockupAlt="Razorfy Real Mockup"
+                  tagColor="var(--accent-green)"
+                  liveUrl="https://razorfy.online"
+                  liveLabel="razorfy.online ↗"
+                  liveBtnColor="var(--accent-green)"
+                  repoUrl="https://github.com/Vitocodando/Razorfy"
+                />
+              </ScrollReveal>
+
               {/* DeLukaz */}
               <ScrollReveal variant="fade-up" delay={100}>
                 <ProjectCard
@@ -294,19 +216,6 @@ export const PortfolioPage: React.FC = () => {
                 />
               </ScrollReveal>
 
-              {/* UNIALFA B.Sc. Foundations */}
-              <ScrollReveal variant="fade-up" delay={200}>
-                <ProjectCard
-                  type={t.academic.type}
-                  title={t.academic.title}
-                  description={t.academic.desc}
-                  stack={data.academicStack}
-                  badge="B.Sc. Foundations"
-                  tagColor="var(--accent-blue)"
-                  repoUrl="https://github.com/Vitocodando/portifolioFaculdade"
-                />
-              </ScrollReveal>
-
               {/* Milis GR Fotografia */}
               <ScrollReveal variant="fade-up" delay={100}>
                 <ProjectCard
@@ -314,7 +223,9 @@ export const PortfolioPage: React.FC = () => {
                   title={t.milis.title}
                   description={t.milis.desc}
                   stack={data.milisStack}
-                  badge="Live Site"
+                  mockupImg="/uploads/mockup-milis-real.png"
+                  mockupAlt="Milis GR Fotografia Mockup"
+                  bgColor="#0A0A0A"
                   tagColor="var(--accent-gold)"
                   liveUrl="https://milisgr.vercel.app"
                   liveLabel="Live Demo ↗"
@@ -329,7 +240,9 @@ export const PortfolioPage: React.FC = () => {
                   title={t.obr.title}
                   description={t.obr.desc}
                   stack={data.obrStack}
-                  badge="Live Site"
+                  mockupImg="/uploads/mockup-obr-real.png"
+                  mockupAlt="OBR Os Brabo da Rua Mockup"
+                  bgColor="#141414"
                   tagColor="var(--accent-purple)"
                   liveUrl="https://obr-psi.vercel.app"
                   liveLabel="Live Demo ↗"

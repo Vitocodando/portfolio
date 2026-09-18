@@ -120,7 +120,7 @@ export const TerminalCard: React.FC = () => {
             mobile: <span style={{ color: 'var(--accent-blue)' }}>'Expo / RN'</span>,
           </div>
           <div style={{ paddingLeft: '12px', opacity: linesVisible >= 7 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
-            saas: <span style={{ color: 'var(--accent-green)' }}>'Razorfy (Live)'</span>
+            focus: <span style={{ color: 'var(--accent-green)' }}>'SaaS · Web · Mobile'</span>
           </div>
           <div style={{ opacity: linesVisible >= 7 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
             {'}'};
@@ -141,8 +141,8 @@ export const TerminalCard: React.FC = () => {
         {/* Quick Metrics Footer */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: '12px' }}>
           <div style={{ border: '1px solid var(--border-subtle)', borderRadius: '6px', padding: '8px 10px', background: 'var(--bg-card-subtle)' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-faint)' }}>SaaS EM PRODUÇÃO</div>
-            <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-green)', marginTop: '2px' }}>Razorfy</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-faint)' }}>PROJETOS EM PRODUÇÃO</div>
+            <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-green)', marginTop: '2px' }}>6+ Live</div>
           </div>
           <div style={{ border: '1px solid var(--border-subtle)', borderRadius: '6px', padding: '8px 10px', background: 'var(--bg-card-subtle)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-faint)' }}>REPOSITÓRIOS</div>

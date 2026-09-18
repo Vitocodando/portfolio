@@ -22,7 +22,7 @@ export const translations = {
       kicker: '// desenvolvedor fullstack',
       role: 'Fullstack · React & Node.js',
       sub: 'Engenheiro de Software em formação · UNIALFA',
-      desc: 'Construo produtos web e mobile de alta escala — do banco de dados à interface de usuário. Criador do Razorfy (SaaS multi-tenant em produção) e desenvolvedor de soluções completas com React, Node.js e TypeScript.',
+      desc: 'Construo produtos web e mobile de alta escala — do banco de dados à interface de usuário. Desenvolvedor de soluções completas e plataformas SaaS multi-tenant com React, Node.js e TypeScript.',
       ctaProject: 'Ver projetos em destaque',
       ctaCv: 'Baixar Currículo',
       statusBadge: 'Disponível para Oportunidades',
@@ -42,18 +42,18 @@ export const translations = {
     about: {
       label: 'SOBRE MIM',
       p1: 'Sou desenvolvedor fullstack com foco em React e Node.js. Comecei no front-end criando e mantendo sites em WordPress e evoluí para construir sistemas de produção completos: arquitetura de API, banco relacional, segurança, 2FA, web e mobile.',
-      p2: 'Curso Engenharia de Software na UNIALFA (2025–2029) e possuo inglês avançado. Meu maior projeto em produção é o Razorfy — plataforma SaaS multi-tenant com segurança de nível corporativo, eventos assíncronos e deploy contínuo.'
+      p2: 'Curso Engenharia de Software na UNIALFA (2025–2029) e possuo inglês avançado. Tenho experiência construindo plataformas SaaS multi-tenant com segurança de nível corporativo, eventos assíncronos e deploy contínuo.'
     },
     project: {
-      label: 'PROJETO EM DESTAQUE',
-      tagline: 'SaaS multi-tenant de agendamento & gestão para barbearias',
-      desc: 'Uma única instância atende várias barbearias com isolamento rígido de dados (RLS). Clientes agendam e acompanham cashback pelo app móvel; barbeiros e admins gerenciam agenda, catálogo e fluxo de caixa; um backoffice mestre (/platform) faz onboarding e controle dos tenants. Web SPA, Mobile App e API Express em produção.',
-      code: 'Ver código no GitHub',
-      shotCaption: '// Razorfy Web SPA, Dashboard & Mobile App em produção real',
-      otherLabel: 'OUTROS PROJETOS & REPOSITÓRIOS GITHUB',
-      otherDesc: 'Aplicações web, agentes de inteligência artificial e utilitários de segurança desenvolvidos com código limpo e boas práticas.',
+      label: 'PROJETOS & REPOSITÓRIOS GITHUB',
+      desc: 'Plataformas SaaS, aplicações web, agentes de inteligência artificial e utilitários de segurança desenvolvidos com código limpo e boas práticas.',
       moreLabel: 'Mais no GitHub',
       moreDesc: 'Acesse o perfil completo com todos os repositórios e contribuições ativas.'
+    },
+    razorfy: {
+      title: 'Razorfy',
+      type: 'SaaS Multi-tenant · Agendamento para Barbearias',
+      desc: 'Plataforma SaaS multi-tenant de agendamento e gestão para barbearias, com isolamento rígido de dados (RLS), app mobile com cashback, backoffice mestre (/platform) e notificações via WhatsApp. Web SPA, Mobile App e API Express em produção.'
     },
     delukaz: {
       title: 'DeLukaz (DLUKZ)',
@@ -69,11 +69,6 @@ export const translations = {
       title: 'WordPress Admin Security Shield',
       type: 'Segurança & Módulo WordPress',
       desc: 'Plugin de segurança desenvolvido para proteção contra escalonamento de privilégios. Bloqueia a criação não autorizada de usuários administradores via painel, reforçando a governança de permissões no CMS.'
-    },
-    academic: {
-      title: 'Engenharia de Software (UNIALFA)',
-      type: 'Projeto Acadêmico & Fundamentos',
-      desc: 'Projeto e base acadêmica demonstrando fundamentos de computação, estruturas de dados, algoritmos e desenvolvimento web moderno durante a graduação em Engenharia de Software na UNIALFA.'
     },
     milis: {
       title: 'Milis GR Fotografia',
@@ -189,7 +184,7 @@ export const translations = {
       kicker: '// fullstack developer',
       role: 'Fullstack · React & Node.js',
       sub: 'Software Engineering undergraduate · UNIALFA',
-      desc: 'I build high-scale web and mobile products — from database architecture to user interface. Creator of Razorfy (multi-tenant SaaS in production) and builder of complete systems with React, Node.js and TypeScript.',
+      desc: 'I build high-scale web and mobile products — from database architecture to user interface. Builder of complete systems and multi-tenant SaaS platforms with React, Node.js and TypeScript.',
       ctaProject: 'See featured projects',
       ctaCv: 'Download resume',
       statusBadge: 'Open to Opportunities',
@@ -209,18 +204,18 @@ export const translations = {
     about: {
       label: 'ABOUT ME',
       p1: 'I am a fullstack developer focused on React and Node.js. I started in front-end building and maintaining WordPress sites and grew into shipping complete production systems: API architecture, relational databases, security, 2FA, web and mobile.',
-      p2: 'I study Software Engineering at UNIALFA (2025–2029) and speak advanced English. My flagship production project is Razorfy — a multi-tenant SaaS platform with production-grade security, domain events and continuous deployment.'
+      p2: 'I study Software Engineering at UNIALFA (2025–2029) and speak advanced English. I have hands-on experience building multi-tenant SaaS platforms with production-grade security, domain events and continuous deployment.'
     },
     project: {
-      label: 'FEATURED PROJECT',
-      tagline: 'Multi-tenant SaaS booking & management platform for barbershops',
-      desc: 'A single instance serves multiple barbershops with strict data isolation (RLS). Clients book and track cashback through the mobile app; barbers and admins manage schedule, catalog and cash flow; a platform backoffice (/platform) handles tenant onboarding and management. Web SPA, Mobile App and Express API in production.',
-      code: 'View code on GitHub',
-      shotCaption: '// Razorfy Web SPA, Dashboard & Mobile App in real production',
-      otherLabel: 'OTHER GITHUB PROJECTS & EXPERIMENTS',
-      otherDesc: 'Web applications, GenAI assistants and security utilities built with clean code and high performance.',
+      label: 'PROJECTS & GITHUB REPOSITORIES',
+      desc: 'SaaS platforms, web applications, GenAI assistants and security utilities built with clean code and high performance.',
       moreLabel: 'More on GitHub',
       moreDesc: 'Explore my full GitHub profile with all repositories and active contributions.'
+    },
+    razorfy: {
+      title: 'Razorfy',
+      type: 'Multi-tenant SaaS · Barbershop Booking',
+      desc: 'Multi-tenant SaaS booking & management platform for barbershops, with strict data isolation (RLS), a mobile app with cashback, a platform backoffice (/platform) and WhatsApp notifications. Web SPA, Mobile App and Express API in production.'
     },
     delukaz: {
       title: 'DeLukaz (DLUKZ)',
@@ -236,11 +231,6 @@ export const translations = {
       title: 'WordPress Admin Security Shield',
       type: 'Security & WordPress Module',
       desc: 'Security plugin developed to prevent privilege escalation. Blocks unauthorized creation of administrator users through the admin panel, enforcing strict CMS governance.'
-    },
-    academic: {
-      title: 'Software Engineering (UNIALFA)',
-      type: 'Academic Project & Foundations',
-      desc: 'Academic project and showcase demonstrating computer science fundamentals, data structures, algorithms and modern web development during the B.Sc. in Software Engineering at UNIALFA.'
     },
     milis: {
       title: 'Milis GR Photography',

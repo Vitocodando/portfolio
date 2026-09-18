@@ -378,15 +378,8 @@ body {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
-  .project-grid {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
   .other-projects-grid {
     grid-template-columns: 1fr !important;
-  }
-  .feats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
   }
   .stack-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -412,9 +405,6 @@ body {
   .stats-bar {
     grid-template-columns: 1fr !important;
   }
-  .project-title {
-    font-size: 32px !important;
-  }
   .contact-title {
     font-size: 34px !important;
   }
@@ -422,7 +412,7 @@ body {
     font-size: 16px !important;
     word-break: break-all;
   }
-  .feats-grid, .stack-grid, .edu-grid, .other-projects-grid {
+  .stack-grid, .edu-grid, .other-projects-grid {
     grid-template-columns: 1fr !important;
   }
   .footer-row {
