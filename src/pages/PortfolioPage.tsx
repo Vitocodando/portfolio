@@ -159,7 +159,7 @@ export const PortfolioPage: React.FC = () => {
                   title={t.razorfy.title}
                   description={t.razorfy.desc}
                   stack={data.razorfyStack}
-                  mockupImg="/uploads/mockup-razorfy-real.png"
+                  mockupImg="/uploads/mockup-razorfy-real.webp"
                   mockupAlt="Razorfy Real Mockup"
                   tagColor="var(--accent-green)"
                   liveUrl="https://razorfy.online"
@@ -176,7 +176,7 @@ export const PortfolioPage: React.FC = () => {
                   title={t.delukaz.title}
                   description={t.delukaz.desc}
                   stack={data.delukazStack}
-                  mockupImg="/uploads/mockup-delukaz-real.png"
+                  mockupImg="/uploads/mockup-delukaz-real.webp"
                   mockupAlt="DeLukaz Real Mockup"
                   tagColor="var(--accent-gold)"
                   liveUrl="https://delukaz-portfolio.vercel.app"
@@ -193,7 +193,7 @@ export const PortfolioPage: React.FC = () => {
                   title={t.nlw.title}
                   description={t.nlw.desc}
                   stack={data.nlwStack}
-                  mockupImg="/uploads/mockup-nlw-real.png"
+                  mockupImg="/uploads/mockup-nlw-real.webp"
                   mockupAlt="NLW Game Meta AI Agent Mockup"
                   bgColor="#07060D"
                   tagColor="var(--accent-purple)"
@@ -226,7 +226,7 @@ export const PortfolioPage: React.FC = () => {
                   title={t.milis.title}
                   description={t.milis.desc}
                   stack={data.milisStack}
-                  mockupImg="/uploads/mockup-milis-real.png"
+                  mockupImg="/uploads/mockup-milis-real.webp"
                   mockupAlt="Milis GR Fotografia Mockup"
                   bgColor="#0A0A0A"
                   tagColor="var(--accent-gold)"
@@ -243,7 +243,7 @@ export const PortfolioPage: React.FC = () => {
                   title={t.obr.title}
                   description={t.obr.desc}
                   stack={data.obrStack}
-                  mockupImg="/uploads/mockup-obr-real.png"
+                  mockupImg="/uploads/mockup-obr-real.webp"
                   mockupAlt="OBR Os Brabo da Rua Mockup"
                   bgColor="#141414"
                   tagColor="var(--accent-purple)"

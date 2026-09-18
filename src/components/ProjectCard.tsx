@@ -50,6 +50,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             src={mockupImg}
             alt={mockupAlt || title}
             className="mockup-img"
+            loading="lazy"
+            decoding="async"
             style={{
               transition: 'transform 0.4s ease',
             }}

@@ -106,7 +106,7 @@ export const SolutionsPage: React.FC = () => {
                 </div>
 
                 <div className="mockup-frame">
-                  <img src="/uploads/mockup-razorfy-real.png" alt="Razorfy Real SaaS Mockup" className="mockup-img" />
+                  <img src="/uploads/mockup-razorfy-real.webp" alt="Razorfy Real SaaS Mockup" className="mockup-img" />
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -206,7 +206,7 @@ export const SolutionsPage: React.FC = () => {
             <ScrollReveal variant="fade-up" delay={100}>
               <div className="clean-card" style={{ padding: '22px', display: 'flex', flexDirection: 'column', gap: '14px', height: '100%' }}>
                 <div className="mockup-frame">
-                  <img src="/uploads/mockup-delukaz-real.png" alt="DeLukaz Real Case Mockup" className="mockup-img" />
+                  <img src="/uploads/mockup-delukaz-real.webp" alt="DeLukaz Real Case Mockup" className="mockup-img" loading="lazy" decoding="async" />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--accent-gold)', textTransform: 'uppercase', fontWeight: 600 }}>
@@ -236,7 +236,7 @@ export const SolutionsPage: React.FC = () => {
             <ScrollReveal variant="fade-up" delay={200}>
               <div className="clean-card" style={{ padding: '22px', display: 'flex', flexDirection: 'column', gap: '14px', height: '100%' }}>
                 <div className="mockup-frame">
-                  <img src="/uploads/mockup-nlw-real.png" alt="NLW Gemini AI Real Mockup" className="mockup-img" />
+                  <img src="/uploads/mockup-nlw-real.webp" alt="NLW Gemini AI Real Mockup" className="mockup-img" loading="lazy" decoding="async" />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--accent-purple)', textTransform: 'uppercase', fontWeight: 600 }}>
@@ -266,7 +266,7 @@ export const SolutionsPage: React.FC = () => {
             <ScrollReveal variant="fade-up" delay={100}>
               <div className="clean-card" style={{ padding: '22px', display: 'flex', flexDirection: 'column', gap: '14px', height: '100%' }}>
                 <div className="mockup-frame">
-                  <img src="/uploads/mockup-milis-real.png" alt="Milis GR Fotografia Real Mockup" className="mockup-img" />
+                  <img src="/uploads/mockup-milis-real.webp" alt="Milis GR Fotografia Real Mockup" className="mockup-img" loading="lazy" decoding="async" />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--accent-blue)', textTransform: 'uppercase', fontWeight: 600 }}>
@@ -296,7 +296,7 @@ export const SolutionsPage: React.FC = () => {
             <ScrollReveal variant="fade-up" delay={200}>
               <div className="clean-card" style={{ padding: '22px', display: 'flex', flexDirection: 'column', gap: '14px', height: '100%' }}>
                 <div className="mockup-frame">
-                  <img src="/uploads/mockup-obr-real.png" alt="OBR Os Brabo da Rua Real Mockup" className="mockup-img" />
+                  <img src="/uploads/mockup-obr-real.webp" alt="OBR Os Brabo da Rua Real Mockup" className="mockup-img" loading="lazy" decoding="async" />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--accent-amber)', textTransform: 'uppercase', fontWeight: 600 }}>
