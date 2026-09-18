@@ -179,7 +179,7 @@ export const PortfolioPage: React.FC = () => {
                   mockupImg="/uploads/mockup-delukaz-real.webp"
                   mockupAlt="DeLukaz Real Mockup"
                   tagColor="var(--accent-gold)"
-                  liveUrl="https://delukaz-portfolio.vercel.app"
+                  liveUrl="https://delukaz.vercel.app"
                   liveLabel="Live Demo ↗"
                   liveBtnColor="var(--accent-gold)"
                   repoUrl="https://github.com/Vitocodando/delukaz-portfolio"

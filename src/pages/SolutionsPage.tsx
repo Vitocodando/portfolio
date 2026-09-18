@@ -221,7 +221,7 @@ export const SolutionsPage: React.FC = () => {
                 </div>
                 <div style={{ display: 'flex', gap: '12px', marginTop: 'auto', paddingTop: '10px' }}>
                   <a
-                    href="https://delukaz-portfolio.vercel.app"
+                    href="https://delukaz.vercel.app"
                     target="_blank"
                     rel="noreferrer"
                     style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent-gold)', textDecoration: 'none', fontWeight: 600 }}
