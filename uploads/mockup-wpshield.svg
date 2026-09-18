@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B0A" />
+      <stop offset="50%" stop-color="#0E1512" />
+      <stop offset="100%" stop-color="#06090A" />
+    </linearGradient>
+    <linearGradient id="wpGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7CF29C" />
+      <stop offset="100%" stop-color="#3FBE79" />
+    </linearGradient>
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#wpBg)" />
+
+  <!-- Glowing Ambient Orbs -->
+  <circle cx="220" cy="180" r="260" fill="#7CF29C" opacity="0.07" filter="url(#greenGlow)" />
+  <circle cx="980" cy="500" r="280" fill="#3FBE79" opacity="0.06" filter="url(#greenGlow)" />
+
+  <!-- Window Frame -->
+  <g transform="translate(100, 45)">
+    <rect width="1000" height="570" rx="16" fill="#0B0F0D" stroke="#233129" stroke-width="1.5" />
+
+    <!-- Top Bar -->
+    <rect width="1000" height="46" rx="16" fill="#111917" />
+    <rect y="30" width="1000" height="16" fill="#111917" />
+    <line x1="0" y1="46" x2="1000" y2="46" stroke="#233129" stroke-width="1" />
+
+    <!-- Window Controls -->
+    <circle cx="28" cy="23" r="5" fill="#EF4444" opacity="0.8" />
+    <circle cx="44" cy="23" r="5" fill="#F59E0B" opacity="0.8" />
+    <circle cx="60" cy="23" r="5" fill="#10B981" opacity="0.8" />
+
+    <!-- Title -->
+    <text x="96" y="28" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700">🛡 WP Admin Security Shield · wp-admin/user-new.php</text>
+    <rect x="760" y="10" width="210" height="26" rx="6" fill="#12241A" stroke="#2A4A36" stroke-width="1" />
+    <circle cx="776" cy="23" r="4" fill="#7CF29C" />
+    <text x="788" y="27" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">Hook Ativo: user_register</text>
+
+    <!-- WP Admin Bar -->
+    <g transform="translate(48, 68)">
+      <rect width="904" height="40" rx="6" fill="#1A2420" stroke="#243A2F" stroke-width="1" />
+      <text x="16" y="25" fill="#C7CFCA" font-family="'JetBrains Mono', monospace" font-size="11">🔒 Painel &gt; Usuários &gt; Adicionar Novo</text>
+      <rect x="700" y="8" width="188" height="24" rx="12" fill="#1F1414" stroke="#4A2323" stroke-width="1" />
+      <text x="716" y="24" fill="#F87171" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">role: administrator</text>
+    </g>
+
+    <!-- Blocked Action Card -->
+    <g transform="translate(48, 128)">
+      <rect width="904" height="140" rx="12" fill="#160E0E" stroke="#4A2323" stroke-width="1.5" />
+      <g transform="translate(24, 24)">
+        <circle cx="16" cy="16" r="16" fill="#2B1414" stroke="#F87171" stroke-width="1.5" />
+        <text x="9" y="22" fill="#F87171" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">✕</text>
+        <text x="44" y="12" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">Ação Bloqueada: Criação de Administrador</text>
+        <text x="44" y="34" fill="#C7CFCA" font-family="'JetBrains Mono', monospace" font-size="12">Tentativa não autorizada de escalonar privilégios via formulário do wp-admin.</text>
+      </g>
+      <rect x="24" y="88" width="856" height="32" rx="6" fill="#0C0A0A" />
+      <text x="36" y="108" fill="#8B96A0" font-family="'JetBrains Mono', monospace" font-size="11">user_id: 482 · ip: 191.30.xx.xx · capability_check: manage_options → DENIED</text>
+    </g>
+
+    <!-- Security Status Grid -->
+    <g transform="translate(48, 284)">
+      <g>
+        <rect width="278" height="94" rx="10" fill="#12211A" stroke="#233129" stroke-width="1" />
+        <text x="18" y="30" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">HOOKS INTERCEPTADOS</text>
+        <text x="18" y="62" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700">user_register</text>
+        <text x="18" y="80" fill="#8B96A0" font-family="'JetBrains Mono', monospace" font-size="10">edit_user_role · set_user_role</text>
+      </g>
+      <g transform="translate(313, 0)">
+        <rect width="278" height="94" rx="10" fill="#12211A" stroke="#233129" stroke-width="1" />
+        <text x="18" y="30" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">TENTATIVAS BLOQUEADAS</text>
+        <text x="18" y="62" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700">100%</text>
+        <text x="18" y="80" fill="#8B96A0" font-family="'JetBrains Mono', monospace" font-size="10">privilege escalation attempts</text>
+      </g>
+      <g transform="translate(626, 0)">
+        <rect width="278" height="94" rx="10" fill="#12211A" stroke="#233129" stroke-width="1" />
+        <text x="18" y="30" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">GOVERNANÇA DE PAPÉIS</text>
+        <text x="18" y="62" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700">Ativa</text>
+        <text x="18" y="80" fill="#8B96A0" font-family="'JetBrains Mono', monospace" font-size="10">role/capability governance enforced</text>
+      </g>
+    </g>
+
+    <!-- Footer log line -->
+    <g transform="translate(48, 400)">
+      <rect width="904" height="120" rx="10" fill="#0E1512" stroke="#233129" stroke-width="1" />
+      <text x="20" y="28" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">// security-log.php</text>
+      <text x="20" y="54" fill="#C7CFCA" font-family="'JetBrains Mono', monospace" font-size="11">[ALERT] Blocked unauthorized admin-role assignment attempt from wp-admin/user-new.php</text>
+      <text x="20" y="76" fill="#C7CFCA" font-family="'JetBrains Mono', monospace" font-size="11">[INFO]  Hardened capability checks active on: user_register, set_user_role, edit_user_role</text>
+      <text x="20" y="98" fill="#7CF29C" font-family="'JetBrains Mono', monospace" font-size="11">[OK]    Admin governance restored — no unauthorized administrators created.</text>
+    </g>
+  </g>
+</svg>

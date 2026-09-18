@@ -210,6 +210,9 @@ export const PortfolioPage: React.FC = () => {
                   title={t.wpShield.title}
                   description={t.wpShield.desc}
                   stack={data.wpShieldStack}
+                  mockupImg="/uploads/mockup-wpshield.svg"
+                  mockupAlt="WordPress Admin Security Shield Mockup"
+                  bgColor="#0B0F0D"
                   badge="Security Hardening"
                   tagColor="var(--accent-green)"
                   repoUrl="https://github.com/Vitocodando/wordpress-admin-block"

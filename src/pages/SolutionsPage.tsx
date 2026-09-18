@@ -261,6 +261,66 @@ export const SolutionsPage: React.FC = () => {
                 </div>
               </div>
             </ScrollReveal>
+
+            {/* Case 3: Milis GR Fotografia */}
+            <ScrollReveal variant="fade-up" delay={100}>
+              <div className="clean-card" style={{ padding: '22px', display: 'flex', flexDirection: 'column', gap: '14px', height: '100%' }}>
+                <div className="mockup-frame">
+                  <img src="/uploads/mockup-milis-real.png" alt="Milis GR Fotografia Real Mockup" className="mockup-img" />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--accent-blue)', textTransform: 'uppercase', fontWeight: 600 }}>
+                    Portfólio & Vitrine Profissional
+                  </div>
+                  <div style={{ fontSize: '19px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                    Milis GR Fotografia — Site Institucional
+                  </div>
+                  <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', fontFamily: 'var(--font-body)' }}>
+                    Portfólio digital para fotógrafa profissional, com galeria de trabalhos e canal direto de contato para orçamentos e ensaios.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', gap: '12px', marginTop: 'auto', paddingTop: '10px' }}>
+                  <a
+                    href="https://milisgr.vercel.app"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent-blue)', textDecoration: 'none', fontWeight: 600 }}
+                  >
+                    Ver Projeto Online ↗
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Case 4: OBR - Os Brabo da Rua */}
+            <ScrollReveal variant="fade-up" delay={200}>
+              <div className="clean-card" style={{ padding: '22px', display: 'flex', flexDirection: 'column', gap: '14px', height: '100%' }}>
+                <div className="mockup-frame">
+                  <img src="/uploads/mockup-obr-real.png" alt="OBR Os Brabo da Rua Real Mockup" className="mockup-img" />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--accent-amber)', textTransform: 'uppercase', fontWeight: 600 }}>
+                    Portfólio & Comunidade Criativa
+                  </div>
+                  <div style={{ fontSize: '19px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                    OBR — Os Brabo da Rua
+                  </div>
+                  <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', fontFamily: 'var(--font-body)' }}>
+                    Plataforma para coletivo de arte urbana ativo desde 2013, com galeria de murais, loja de produtos e integração com redes sociais.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', gap: '12px', marginTop: 'auto', paddingTop: '10px' }}>
+                  <a
+                    href="https://obr-psi.vercel.app"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent-amber)', textDecoration: 'none', fontWeight: 600 }}
+                  >
+                    Ver Projeto Online ↗
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
