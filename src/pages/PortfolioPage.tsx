@@ -254,6 +254,91 @@ export const PortfolioPage: React.FC = () => {
                 />
               </ScrollReveal>
 
+              {/* Bentivi Shopping */}
+              <ScrollReveal variant="fade-up" delay={100}>
+                <ProjectCard
+                  type={t.bentivi.type}
+                  title={t.bentivi.title}
+                  description={t.bentivi.desc}
+                  stack={data.bentiviStack}
+                  mockupImg="/uploads/mockup-bentivishopping-real.webp"
+                  mockupAlt="Bentivi Shopping Mockup"
+                  bgColor="#F5EFD8"
+                  tagColor="var(--accent-gold)"
+                  liveUrl="https://bentivishopping.com.br"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-gold)"
+                />
+              </ScrollReveal>
+
+              {/* Desdobra Engenharia */}
+              <ScrollReveal variant="fade-up" delay={200}>
+                <ProjectCard
+                  type={t.desdobra.type}
+                  title={t.desdobra.title}
+                  description={t.desdobra.desc}
+                  stack={data.desdobraStack}
+                  mockupImg="/uploads/mockup-desdobra-real.webp"
+                  mockupAlt="Desdobra Engenharia Mockup"
+                  bgColor="#14161A"
+                  tagColor="var(--accent-blue)"
+                  liveUrl="https://desdobra.m2tech.cloud"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-blue)"
+                />
+              </ScrollReveal>
+
+              {/* Pet Seguro */}
+              <ScrollReveal variant="fade-up" delay={100}>
+                <ProjectCard
+                  type={t.petseguro.type}
+                  title={t.petseguro.title}
+                  description={t.petseguro.desc}
+                  stack={data.petseguroStack}
+                  mockupImg="/uploads/mockup-petseguro-real.webp"
+                  mockupAlt="Pet Seguro Mockup"
+                  bgColor="#E8F2ED"
+                  tagColor="var(--accent-purple)"
+                  liveUrl="https://petseguro.com.br"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-purple)"
+                />
+              </ScrollReveal>
+
+              {/* Empilhadeira Santana */}
+              <ScrollReveal variant="fade-up" delay={200}>
+                <ProjectCard
+                  type={t.empilhadeira.type}
+                  title={t.empilhadeira.title}
+                  description={t.empilhadeira.desc}
+                  stack={data.empilhadeiraStack}
+                  mockupImg="/uploads/mockup-empilhadeirasantana-real.webp"
+                  mockupAlt="Empilhadeira Santana Mockup"
+                  bgColor="#101820"
+                  tagColor="var(--accent-red)"
+                  liveUrl="https://empilhadeirasantana.com.br"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-red)"
+                />
+              </ScrollReveal>
+
+              {/* Dra. Fernanda Guidolin */}
+              <ScrollReveal variant="fade-up" delay={100}>
+                <ProjectCard
+                  type={t.fernanda.type}
+                  title={t.fernanda.title}
+                  description={t.fernanda.desc}
+                  stack={data.fernandaStack}
+                  mockupImg="/uploads/mockup-fernandaguidolin-real.webp"
+                  mockupAlt="Dra. Fernanda Guidolin Mockup"
+                  bgColor="#FAFAFA"
+                  tagColor="var(--accent-amber)"
+                  liveUrl="https://fernandaguidolin.com.br"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-amber)"
+                />
+              </ScrollReveal>
+
               {/* NLW Game AI Agent */}
               <ScrollReveal variant="fade-up" delay={100}>
                 <ProjectCard

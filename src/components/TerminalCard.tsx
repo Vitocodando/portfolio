@@ -7,22 +7,11 @@ export const TerminalCard: React.FC = () => {
 
   useEffect(() => {
     // Reveal lines one by one on mount for realistic terminal boot
-    const timer1 = setTimeout(() => setLinesVisible(1), 200);
-    const timer2 = setTimeout(() => setLinesVisible(2), 450);
-    const timer3 = setTimeout(() => setLinesVisible(3), 700);
-    const timer4 = setTimeout(() => setLinesVisible(4), 950);
-    const timer5 = setTimeout(() => setLinesVisible(5), 1200);
-    const timer6 = setTimeout(() => setLinesVisible(6), 1450);
-    const timer7 = setTimeout(() => setLinesVisible(7), 1700);
+    const delays = [200, 450, 700, 950, 1200, 1450];
+    const timers = delays.map((delay, idx) => setTimeout(() => setLinesVisible(idx + 1), delay));
 
     return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-      clearTimeout(timer4);
-      clearTimeout(timer5);
-      clearTimeout(timer6);
-      clearTimeout(timer7);
+      timers.forEach(clearTimeout);
     };
   }, []);
 
@@ -98,7 +87,7 @@ export const TerminalCard: React.FC = () => {
             borderRadius: '8px',
             padding: '14px',
             border: '1px solid #19201D',
-            minHeight: '160px',
+            minHeight: '190px',
           }}
         >
           <div style={{ color: 'var(--text-faint)', opacity: linesVisible >= 1 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
@@ -108,21 +97,18 @@ export const TerminalCard: React.FC = () => {
             <span style={{ color: 'var(--accent-green)' }}>const</span> engineer = {'{'}
           </div>
           <div style={{ paddingLeft: '12px', opacity: linesVisible >= 3 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
-            role: <span style={{ color: 'var(--accent-blue)' }}>'Fullstack'</span>,
+            name: <span style={{ color: 'var(--accent-blue)' }}>'Victor Arthur'</span>,
           </div>
           <div style={{ paddingLeft: '12px', opacity: linesVisible >= 4 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
-            stack: [<span style={{ color: 'var(--accent-blue)' }}>'React 19'</span>, <span style={{ color: 'var(--accent-blue)' }}>'Node 22'</span>],
+            age: <span style={{ color: 'var(--accent-blue)' }}>19</span>,
           </div>
           <div style={{ paddingLeft: '12px', opacity: linesVisible >= 5 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
-            database: [<span style={{ color: 'var(--accent-blue)' }}>'PostgreSQL'</span>, <span style={{ color: 'var(--accent-blue)' }}>'Prisma'</span>],
+            education: <span style={{ color: 'var(--accent-blue)' }}>'Eng. de Software · UNIALFA'</span>,
           </div>
           <div style={{ paddingLeft: '12px', opacity: linesVisible >= 6 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
-            mobile: <span style={{ color: 'var(--accent-blue)' }}>'Expo / RN'</span>,
-          </div>
-          <div style={{ paddingLeft: '12px', opacity: linesVisible >= 7 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
             focus: <span style={{ color: 'var(--accent-green)' }}>'SaaS · Web · Mobile'</span>
           </div>
-          <div style={{ opacity: linesVisible >= 7 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
+          <div style={{ opacity: linesVisible >= 6 ? 1 : 0, transition: 'opacity 0.3s ease' }}>
             {'}'};
             <span
               style={{

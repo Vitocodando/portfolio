@@ -85,6 +85,46 @@ export const getPortfolioData = (lang: Language) => {
     'Vercel Deploy',
   ];
 
+  const bentiviStack = [
+    'WordPress',
+    'Elementor',
+    'PHP',
+    'Matterport (Tour Virtual)',
+    'Responsive Design',
+  ];
+
+  const desdobraStack = [
+    'WordPress',
+    'Elementor',
+    'PHP',
+    'Formulários de Captação',
+    'Responsive Design',
+  ];
+
+  const petseguroStack = [
+    'WordPress',
+    'WooCommerce',
+    'Elementor',
+    'PHP',
+    'E-commerce',
+  ];
+
+  const empilhadeiraStack = [
+    'WordPress',
+    'Elementor',
+    'PHP',
+    'Catálogo de Produtos',
+    'Responsive Design',
+  ];
+
+  const fernandaStack = [
+    'WordPress',
+    'Elementor',
+    'PHP',
+    'Agendamento Online',
+    'Responsive Design',
+  ];
+
   const jobs: JobExperience[] = isEn
     ? [
         {
@@ -236,6 +276,11 @@ export const getPortfolioData = (lang: Language) => {
     obrStack,
     jvfitStack,
     lestaryStack,
+    bentiviStack,
+    desdobraStack,
+    petseguroStack,
+    empilhadeiraStack,
+    fernandaStack,
     jobs,
     skills,
   };

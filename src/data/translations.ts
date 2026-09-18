@@ -90,6 +90,31 @@ export const translations = {
       type: 'Empresa de Tecnologia · Sistemas & SaaS',
       desc: 'Site institucional da Lestary, empresa de engenharia de software especializada em sistemas sob medida, plataformas SaaS e soluções digitais para múltiplos setores.'
     },
+    bentivi: {
+      title: 'Bentivi Shopping',
+      type: 'Website Institucional · Shopping Center',
+      desc: 'Site institucional do Bentivi Shopping (Goiânia), com vitrine de lojas, cinema, gastronomia e serviços, tour virtual em 360° e agenda de eventos.'
+    },
+    desdobra: {
+      title: 'Desdobra Engenharia',
+      type: 'Website Institucional · Engenharia & Construção',
+      desc: 'Site institucional para empresa de engenharia e construção, com portfólio de obras residenciais, comerciais e industriais e captação de orçamentos.'
+    },
+    petseguro: {
+      title: 'Pet Seguro',
+      type: 'E-commerce · Identificação de Pets via QR Code',
+      desc: 'Loja virtual de plaquinhas de identificação com QR Code para pets: quem encontra escaneia e fala direto com o dono pelo WhatsApp. Checkout com parcelamento e descontos por quantidade.'
+    },
+    empilhadeira: {
+      title: 'Empilhadeira Santana',
+      type: 'Website Institucional · Locação & Venda de Equipamentos',
+      desc: 'Site institucional para locação e venda de empilhadeiras e plataformas elevatórias, com catálogo de produtos por categoria e orçamento rápido via popup.'
+    },
+    fernanda: {
+      title: 'Dra. Fernanda Guidolin',
+      type: 'Website Institucional · Consultório Médico',
+      desc: 'Site institucional para reumatologista, com agendamento de consultas online, teleconsulta, blog de saúde e integração com WhatsApp.'
+    },
     stack: { label: 'STACK & HABILIDADES' },
     exp: { label: 'EXPERIÊNCIA' },
     edu: {
@@ -261,6 +286,31 @@ export const translations = {
       title: 'Lestary',
       type: 'Technology Company · Systems & SaaS',
       desc: 'Institutional site for Lestary, a software engineering company specialized in custom systems, SaaS platforms and digital solutions for multiple industries.'
+    },
+    bentivi: {
+      title: 'Bentivi Shopping',
+      type: 'Institutional Website · Shopping Mall',
+      desc: 'Institutional site for Bentivi Shopping (Goiânia), showcasing stores, cinema, dining and services, a 360° virtual tour and an events calendar.'
+    },
+    desdobra: {
+      title: 'Desdobra Engenharia',
+      type: 'Institutional Website · Engineering & Construction',
+      desc: 'Institutional site for an engineering and construction company, featuring a portfolio of residential, commercial and industrial projects and quote requests.'
+    },
+    petseguro: {
+      title: 'Pet Seguro',
+      type: 'E-commerce · QR Code Pet ID Tags',
+      desc: 'Online store for QR-coded pet ID tags: whoever finds the pet scans the tag and messages the owner directly on WhatsApp. Checkout with installments and bulk discounts.'
+    },
+    empilhadeira: {
+      title: 'Empilhadeira Santana',
+      type: 'Institutional Website · Equipment Rental & Sales',
+      desc: 'Institutional site for forklift and aerial platform rental and sales, with a categorized product catalog and a quick quote popup.'
+    },
+    fernanda: {
+      title: 'Dra. Fernanda Guidolin',
+      type: 'Institutional Website · Medical Practice',
+      desc: 'Institutional site for a rheumatologist, with online appointment booking, telemedicine, a health blog and WhatsApp integration.'
     },
     stack: { label: 'STACK & SKILLS' },
     exp: { label: 'EXPERIENCE' },
