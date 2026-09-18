@@ -69,6 +69,22 @@ export const getPortfolioData = (lang: Language) => {
     'Vercel Deploy',
   ];
 
+  const jvfitStack = [
+    'React',
+    'TypeScript',
+    'Tailwind CSS',
+    'Dark/Light Mode',
+    'Web & Mobile Responsivo',
+  ];
+
+  const lestaryStack = [
+    'React',
+    'TypeScript',
+    'Tailwind CSS',
+    'Lucide Icons',
+    'Vercel Deploy',
+  ];
+
   const jobs: JobExperience[] = isEn
     ? [
         {
@@ -218,6 +234,8 @@ export const getPortfolioData = (lang: Language) => {
     wpShieldStack,
     milisStack,
     obrStack,
+    jvfitStack,
+    lestaryStack,
     jobs,
     skills,
   };

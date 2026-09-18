@@ -252,6 +252,40 @@ export const PortfolioPage: React.FC = () => {
                   liveBtnColor="var(--accent-purple)"
                 />
               </ScrollReveal>
+
+              {/* JVfit */}
+              <ScrollReveal variant="fade-up" delay={100}>
+                <ProjectCard
+                  type={t.jvfit.type}
+                  title={t.jvfit.title}
+                  description={t.jvfit.desc}
+                  stack={data.jvfitStack}
+                  mockupImg="/uploads/mockup-jvfit-real.webp"
+                  mockupAlt="JVfit Mockup"
+                  bgColor="#F9FAF6"
+                  tagColor="var(--accent-blue)"
+                  liveUrl="https://jvfit.lestary.com.br"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-blue)"
+                />
+              </ScrollReveal>
+
+              {/* Lestary */}
+              <ScrollReveal variant="fade-up" delay={200}>
+                <ProjectCard
+                  type={t.lestary.type}
+                  title={t.lestary.title}
+                  description={t.lestary.desc}
+                  stack={data.lestaryStack}
+                  mockupImg="/uploads/mockup-lestary-real.webp"
+                  mockupAlt="Lestary Mockup"
+                  bgColor="#F4F6F8"
+                  tagColor="var(--accent-amber)"
+                  liveUrl="https://lestary.com.br"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-amber)"
+                />
+              </ScrollReveal>
             </div>
           </div>
 

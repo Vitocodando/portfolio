@@ -80,6 +80,16 @@ export const translations = {
       type: 'Web Application · Portfólio de Arte Urbana',
       desc: 'Plataforma para o coletivo de arte urbana OBR, ativo desde 2013, com galeria de murais e trabalhos da crew, loja de produtos e integração com redes sociais.'
     },
+    jvfit: {
+      title: 'JVfit',
+      type: 'SaaS · Gestão de Personal Training',
+      desc: 'Plataforma SaaS que elimina a fricção entre personal trainers e alunos, com gestão de treinos, planos e acompanhamento em tempo real — acessível no computador, notebook e celular com tema claro e escuro.'
+    },
+    lestary: {
+      title: 'Lestary',
+      type: 'Empresa de Tecnologia · Sistemas & SaaS',
+      desc: 'Site institucional da Lestary, empresa de engenharia de software especializada em sistemas sob medida, plataformas SaaS e soluções digitais para múltiplos setores.'
+    },
     stack: { label: 'STACK & HABILIDADES' },
     exp: { label: 'EXPERIÊNCIA' },
     edu: {
@@ -241,6 +251,16 @@ export const translations = {
       title: 'OBR — Os Brabo da Rua',
       type: 'Web Application · Street Art Portfolio',
       desc: 'Platform for the OBR street art collective, active since 2013, featuring a gallery of murals and crew work, a merch store and social media integration.'
+    },
+    jvfit: {
+      title: 'JVfit',
+      type: 'SaaS · Personal Training Management',
+      desc: 'SaaS platform that removes the friction between personal trainers and clients, with workout and plan management and real-time tracking — available on desktop, laptop and mobile with light and dark themes.'
+    },
+    lestary: {
+      title: 'Lestary',
+      type: 'Technology Company · Systems & SaaS',
+      desc: 'Institutional site for Lestary, a software engineering company specialized in custom systems, SaaS platforms and digital solutions for multiple industries.'
     },
     stack: { label: 'STACK & SKILLS' },
     exp: { label: 'EXPERIENCE' },
