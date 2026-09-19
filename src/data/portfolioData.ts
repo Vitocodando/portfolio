@@ -128,6 +128,17 @@ export const getPortfolioData = (lang: Language) => {
   const jobs: JobExperience[] = isEn
     ? [
         {
+          period: 'Jul 2026 – Present',
+          role: 'Tier 1 Support',
+          org: 'ChatPro',
+          points: [
+            "Customer support for the platform's client instances, helping with setup, connection and day-to-day usage.",
+            "Technical support for the system's APIs, assisting clients and developers with integration.",
+            'Diagnosed and resolved WhatsApp instance connection/reconnection issues and API integration failures.',
+            'Logged, triaged and tracked support tickets via the helpdesk system, escalating technical issues to the N2/dev team.',
+          ],
+        },
+        {
           period: 'Apr 2025 – Jun 2026',
           role: 'Front-end Web Developer',
           org: 'M2 Soluções e Tecnologia · Goiânia, GO',
@@ -148,6 +159,17 @@ export const getPortfolioData = (lang: Language) => {
         },
       ]
     : [
+        {
+          period: 'jul 2026 – Atual',
+          role: 'Suporte Nível 1',
+          org: 'ChatPro',
+          points: [
+            'Suporte ao cliente nas instâncias da plataforma, auxiliando em configuração, conexão e uso do sistema.',
+            'Suporte técnico às APIs do sistema, apoiando clientes e desenvolvedores na integração.',
+            'Diagnóstico e resolução de problemas de conexão/reconexão de instâncias do WhatsApp e falhas de integração via API.',
+            'Abertura, triagem e acompanhamento de chamados em sistema de helpdesk, com escalonamento técnico para o time de N2.',
+          ],
+        },
         {
           period: 'abr 2025 – jun 2026',
           role: 'Desenvolvedor Web Front-end',
