@@ -128,7 +128,7 @@ export const getPortfolioData = (lang: Language) => {
   const jobs: JobExperience[] = isEn
     ? [
         {
-          period: 'Jul 2026 – Present',
+          period: 'Jul 2026 – Sep 2026',
           role: 'Tier 1 Support',
           org: 'ChatPro',
           points: [
@@ -160,7 +160,7 @@ export const getPortfolioData = (lang: Language) => {
       ]
     : [
         {
-          period: 'jul 2026 – Atual',
+          period: 'jul 2026 – set 2026',
           role: 'Suporte Nível 1',
           org: 'ChatPro',
           points: [
