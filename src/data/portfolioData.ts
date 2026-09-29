@@ -85,6 +85,15 @@ export const getPortfolioData = (lang: Language) => {
     'Vercel Deploy',
   ];
 
+  const urbanPizzaStack = [
+    'JavaScript ES6+',
+    'HTML5 Semântico',
+    'CSS3 Moderno',
+    'GSAP + ScrollTrigger',
+    'Lenis Smooth Scroll',
+    'Vercel Deploy',
+  ];
+
   const bentiviStack = [
     'WordPress',
     'Elementor',
@@ -298,6 +307,7 @@ export const getPortfolioData = (lang: Language) => {
     obrStack,
     jvfitStack,
     lestaryStack,
+    urbanPizzaStack,
     bentiviStack,
     desdobraStack,
     petseguroStack,

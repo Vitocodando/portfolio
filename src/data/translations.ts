@@ -90,6 +90,11 @@ export const translations = {
       type: 'Empresa de Tecnologia · Sistemas & SaaS',
       desc: 'Site institucional da Lestary, empresa de engenharia de software especializada em sistemas sob medida, plataformas SaaS e soluções digitais para múltiplos setores.'
     },
+    urbanPizza: {
+      title: 'Urban Pizza',
+      type: 'Landing Page · Pizzaria & Delivery',
+      desc: 'Landing page da Urban Pizza, pizzaria artesanal em Senador Canedo (GO), com cardápio em destaque, horários de delivery e pedidos direto pelo cardápio digital, iFood ou WhatsApp. Animações de scroll com GSAP e rolagem suave com Lenis.'
+    },
     bentivi: {
       title: 'Bentivi Shopping',
       type: 'Website Institucional · Shopping Center',
@@ -286,6 +291,11 @@ export const translations = {
       title: 'Lestary',
       type: 'Technology Company · Systems & SaaS',
       desc: 'Institutional site for Lestary, a software engineering company specialized in custom systems, SaaS platforms and digital solutions for multiple industries.'
+    },
+    urbanPizza: {
+      title: 'Urban Pizza',
+      type: 'Landing Page · Pizzeria & Delivery',
+      desc: 'Landing page for Urban Pizza, an artisanal pizzeria in Senador Canedo (GO, Brazil), featuring a menu showcase, delivery hours and ordering straight through the digital menu, iFood or WhatsApp. Scroll animations with GSAP and smooth scrolling with Lenis.'
     },
     bentivi: {
       title: 'Bentivi Shopping',

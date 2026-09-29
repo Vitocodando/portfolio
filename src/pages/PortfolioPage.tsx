@@ -254,6 +254,23 @@ export const PortfolioPage: React.FC = () => {
                 />
               </ScrollReveal>
 
+              {/* Urban Pizza */}
+              <ScrollReveal variant="fade-up" delay={100}>
+                <ProjectCard
+                  type={t.urbanPizza.type}
+                  title={t.urbanPizza.title}
+                  description={t.urbanPizza.desc}
+                  stack={data.urbanPizzaStack}
+                  mockupImg="/uploads/mockup-urbanpizza-real.webp"
+                  mockupAlt="Urban Pizza Mockup"
+                  bgColor="#1F1F1F"
+                  tagColor="var(--accent-red)"
+                  liveUrl="https://urban-pizza-lp.vercel.app"
+                  liveLabel="Live Demo ↗"
+                  liveBtnColor="var(--accent-red)"
+                />
+              </ScrollReveal>
+
               {/* Bentivi Shopping */}
               <ScrollReveal variant="fade-up" delay={100}>
                 <ProjectCard
