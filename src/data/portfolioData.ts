@@ -137,6 +137,16 @@ export const getPortfolioData = (lang: Language) => {
   const jobs: JobExperience[] = isEn
     ? [
         {
+          period: 'Oct 2026 – Present',
+          role: 'Web Developer',
+          org: 'Grupo Olimpo · Goiânia, GO',
+          points: [
+            "Built and maintained the group's websites and landing pages with WordPress and React.",
+            'Developed internal systems and API integrations with JavaScript, HTML and CSS.',
+            'Ran database queries and analyses to support decisions and internal requests.',
+          ],
+        },
+        {
           period: 'Jul 2026 – Sep 2026',
           role: 'Tier 1 Support',
           org: 'ChatPro',
@@ -168,6 +178,16 @@ export const getPortfolioData = (lang: Language) => {
         },
       ]
     : [
+        {
+          period: 'out 2026 – Atual',
+          role: 'Desenvolvedor Web',
+          org: 'Grupo Olimpo · Goiânia, GO',
+          points: [
+            'Desenvolvimento e manutenção de sites e landing pages em WordPress e React para o grupo.',
+            'Criação de sistemas internos e integrações via API com JavaScript, HTML e CSS.',
+            'Análises e consultas no banco de dados para apoiar decisões e demandas internas.',
+          ],
+        },
         {
           period: 'jul 2026 – set 2026',
           role: 'Suporte Nível 1',
